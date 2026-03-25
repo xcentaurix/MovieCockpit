@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<screen backgroundColor="transparent" flags="wfNoBorder" name="RecordingInfo" position="fill">
+	<panel name="Screen_3"/>
+	<panel position="center,center" size="1416,825">
+		<widget enableWrapAround="1" position="20,80" render="Listbox" scrollbarMode="showOnDemand" size="1376,640" source="list" transparent="1">
+			<convert type="TemplatedMultiContent"> { "template": [ MultiContentEntryText(pos=(5,0), size=(330,40), flags=RT_VALIGN_CENTER, text=0), MultiContentEntryText(pos=(370,0), size=(966,40), flags=RT_VALIGN_CENTER, text=1), ], "fonts": [gFont("Regular",30)], "itemHeight":40 } </convert>
+		</widget>
+	</panel>
+</screen>

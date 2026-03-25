@@ -1,0 +1,11 @@
+#!/bin/sh
+echo "***********************************"
+echo "*          MovieCockpit           *"
+echo "*               by                *"
+echo "*          dream-alpha            *"
+echo "***********************************"
+echo ""
+echo "MovieCockpit plugin installed successfully."
+echo "Please restart DreamOS now!"
+echo ""
+exit 0

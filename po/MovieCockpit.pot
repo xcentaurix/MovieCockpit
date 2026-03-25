@@ -1,0 +1,691 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MovieCockpit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-08 17:57+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: dream-alpha\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Loco-Source-Locale: en-US\n"
+"X-Loco-Project-Id: 47158\n"
+"X-Loco-Api-Version: 1.0.19 20180501-1\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Loco-Source-Locale: en-US\n"
+"X-Loco-Project-Id: 47158\n"
+"X-Loco-Api-Version: 1.0.19 20180501-1\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: skin\n"
+
+msgid "Exit"
+msgstr ""
+
+msgid "Select function"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Open setup"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Directory up"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Move"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Create series directory"
+msgstr ""
+
+msgid "Move to series directory"
+msgstr ""
+
+msgid "Empty trashcan"
+msgstr ""
+
+msgid "Delete cover"
+msgstr ""
+
+msgid "Bookmarks"
+msgstr ""
+
+msgid "Archive"
+msgstr ""
+
+msgid "Reload cache"
+msgstr ""
+
+msgid "Remove all marks"
+msgstr ""
+
+msgid "Setup"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Select plugin"
+msgstr ""
+
+msgid "Infobar/Play"
+msgstr ""
+
+msgid "Play/Pause"
+msgstr ""
+
+msgid "Stop playback"
+msgstr ""
+
+msgid "Skip forward"
+msgstr ""
+
+msgid "Skip backward"
+msgstr ""
+
+msgid "EPG Info"
+msgstr ""
+
+msgid "Do you want to resume playback at position: %d:%02d:%02d?"
+msgstr ""
+
+msgid "DD.MM.YYYY"
+msgstr ""
+
+msgid "WD DD.MM.YYYY"
+msgstr ""
+
+msgid "DD.MM.YYYY HH:MM"
+msgstr ""
+
+msgid "WD DD.MM.YYYY HH:MM"
+msgstr ""
+
+msgid "DD.MM. HH:MM"
+msgstr ""
+
+msgid "WD DD.MM. HH:MM"
+msgstr ""
+
+msgid "YYYY/MM/DD"
+msgstr ""
+
+msgid "WD YYYY/MM/DD"
+msgstr ""
+
+msgid "YYYY/MM/DD HH:MM"
+msgstr ""
+
+msgid "WD YYYY/MM/DD HH:MM"
+msgstr ""
+
+msgid "MM/DD HH:MM"
+msgstr ""
+
+msgid "WD MM/DD HH:MM"
+msgstr ""
+
+msgid "off"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "(#)"
+msgstr ""
+
+msgid "(#/GB)"
+msgstr ""
+
+msgid "(GB)"
+msgstr ""
+
+msgid "Date sort down"
+msgstr ""
+
+msgid "Date sort up"
+msgstr ""
+
+msgid "Alpha sort up"
+msgstr ""
+
+msgid "Alpha sort down"
+msgstr ""
+
+msgid "red"
+msgstr ""
+
+msgid "light red"
+msgstr ""
+
+msgid "dark red"
+msgstr ""
+
+msgid "white"
+msgstr ""
+
+msgid "light grey"
+msgstr ""
+
+msgid "grey"
+msgstr ""
+
+msgid "dark grey"
+msgstr ""
+
+msgid "black"
+msgstr ""
+
+msgid "dark yellow"
+msgstr ""
+
+msgid "yellow"
+msgstr ""
+
+msgid "beginning"
+msgstr ""
+
+msgid "first mark"
+msgstr ""
+
+msgid "event start"
+msgstr ""
+
+msgid "GENERAL"
+msgstr ""
+
+msgid "Show bookmark content on start"
+msgstr ""
+
+msgid ""
+"Select whether bookmark content is to be displayed at plugin start or the "
+"last directory."
+msgstr ""
+
+msgid "Automatic cleanup of timers list"
+msgstr ""
+
+msgid ""
+"Select whether completed recording timers should be deleted automatically."
+msgstr ""
+
+msgid "PLAYBACK"
+msgstr ""
+
+msgid "Resume video at last position"
+msgstr ""
+
+msgid "Select whether video should be resumed at last stop position."
+msgstr ""
+
+msgid "Video start at"
+msgstr ""
+
+msgid "Select at which position video is started at."
+msgstr ""
+
+msgid "DISPLAY"
+msgstr ""
+
+msgid "Default sort mode"
+msgstr ""
+
+msgid "Select the start mode to be used at startup."
+msgstr ""
+
+msgid "Show directories information"
+msgstr ""
+
+msgid "Select which information should be displayed for directories."
+msgstr ""
+
+msgid "Show mount points"
+msgstr ""
+
+msgid "Select whether to show mount_points or not."
+msgstr ""
+
+msgid "Watching in progress percent"
+msgstr ""
+
+msgid "Select percentage for videos that areconsidered being watched."
+msgstr ""
+
+msgid "Finished watching percent"
+msgstr ""
+
+msgid "Select percentage for videos that areconsidered finished."
+msgstr ""
+
+msgid "Default color for video"
+msgstr ""
+
+msgid "Select the color for video."
+msgstr ""
+
+msgid "Default color for highlighted video"
+msgstr ""
+
+msgid "Select the color for videos that are highlighted."
+msgstr ""
+
+msgid "Default color for recording"
+msgstr ""
+
+msgid "Select the color for recording."
+msgstr ""
+
+msgid "Default color for highlighted recording"
+msgstr ""
+
+msgid "Select the color for highlighted recording."
+msgstr ""
+
+msgid "Default color for selected video"
+msgstr ""
+
+msgid "Select the color for selected video."
+msgstr ""
+
+msgid "Default color for highlighted selected video"
+msgstr ""
+
+msgid "Select the color for selected and highlighted video."
+msgstr ""
+
+msgid "RECORDING COVERS"
+msgstr ""
+
+msgid "Download cover automatically for recording"
+msgstr ""
+
+msgid ""
+"Select whether a cover should be automatically downloaded when recording a "
+"movie."
+msgstr ""
+
+msgid "Cover source"
+msgstr ""
+
+msgid "Select the cover source."
+msgstr ""
+
+msgid "Show fallback cover"
+msgstr ""
+
+msgid ""
+"Select whether a \"no cover available\" cover should be displayed when no "
+"cover is available."
+msgstr ""
+
+msgid "TRASHCAN"
+msgstr ""
+
+msgid "Show trashcan directory"
+msgstr ""
+
+msgid "Select whether the trashcan should be displayed in the video list."
+msgstr ""
+
+msgid "Show trashcan information"
+msgstr ""
+
+msgid "Select the trashcan information to be shown."
+msgstr ""
+
+msgid "Enable auto trashcan cleanup"
+msgstr ""
+
+msgid "Select whether the trashcan should be cleaned automatically."
+msgstr ""
+
+msgid "File retention period in trashcan"
+msgstr ""
+
+msgid ""
+"Select how many days the files should be kept in the trashcan before they "
+"are cleaned automatically."
+msgstr ""
+
+msgid "LANGUAGE"
+msgstr ""
+
+msgid "Preferred EPG language"
+msgstr ""
+
+msgid "Select the preferred EPG language."
+msgstr ""
+
+msgid "ARCHIVE"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Select whether archiving should be activated."
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+msgid "Select the source bookmark for archiving."
+msgstr ""
+
+msgid "Target"
+msgstr ""
+
+msgid "Select the target bookmark for archiving."
+msgstr ""
+
+msgid "CACHE"
+msgstr ""
+
+msgid "Cache directory"
+msgstr ""
+
+msgid "Select directory for cache database file."
+msgstr ""
+
+msgid "DEBUG"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Select debug log level."
+msgstr ""
+
+msgid "No event info available"
+msgstr ""
+
+msgid "trashcan"
+msgstr ""
+
+msgid "Videos"
+msgstr ""
+
+msgid "Video file does not exist"
+msgstr ""
+
+msgid "Enter directory name:"
+msgstr ""
+
+msgid "Do you really want to reload the SQL cache?"
+msgstr ""
+
+msgid "Select directory"
+msgstr ""
+
+msgid "Stop recording(s)"
+msgstr ""
+
+msgid "Permanently delete the selected video file(s) or dir(s)"
+msgstr ""
+
+msgid "Move file(s)"
+msgstr ""
+
+msgid "Copy file(s)"
+msgstr ""
+
+msgid "is not mounted"
+msgstr ""
+
+msgid "Can't move recordings"
+msgstr ""
+
+msgid "Can't copy recordings"
+msgstr ""
+
+msgid ""
+"Archive source and/or target directory does not exist, please configure "
+"directories in setup."
+msgstr ""
+
+msgid "Permanently delete all files in trashcan?"
+msgstr ""
+
+msgid "Not enough space in target directory for video file"
+msgstr ""
+
+msgid "Color key red"
+msgstr ""
+
+msgid "Color key green"
+msgstr ""
+
+msgid "Color key yellow"
+msgstr ""
+
+msgid "Color key blue"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Next list content"
+msgstr ""
+
+msgid "Previous list content"
+msgstr ""
+
+msgid "Context menu"
+msgstr ""
+
+msgid "Plugins menu"
+msgstr ""
+
+msgid "EPG info"
+msgstr ""
+
+msgid "TMDB info"
+msgstr ""
+
+msgid "Cursor page up"
+msgstr ""
+
+msgid "Cursor page down"
+msgstr ""
+
+msgid "Cursor up"
+msgstr ""
+
+msgid "Cursor down"
+msgstr ""
+
+msgid "Bouquet up"
+msgstr ""
+
+msgid "Bouquet down"
+msgstr ""
+
+msgid "Selection on/off"
+msgstr ""
+
+msgid "Selection off"
+msgstr ""
+
+msgid "Color buttons next"
+msgstr ""
+
+msgid "Color buttons previous"
+msgstr ""
+
+msgid "File operations progress"
+msgstr ""
+
+msgid "Recording Info"
+msgstr ""
+
+msgid "Sort mode"
+msgstr ""
+
+msgid "Sort order"
+msgstr ""
+
+msgid "List type"
+msgstr ""
+
+msgid "Reset progress"
+msgstr ""
+
+msgid "Date/Mount"
+msgstr ""
+
+msgid "Timer list"
+msgstr ""
+
+msgid "Restore"
+msgstr ""
+
+msgid "Trashcan"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "up"
+msgstr ""
+
+msgid "directory"
+msgstr ""
+
+msgid "min"
+msgstr ""
+
+msgid "Manage recordings"
+msgstr ""
+
+msgid "List style: default"
+msgstr ""
+
+msgid "List style: compact with description"
+msgstr ""
+
+msgid "List style: compact"
+msgstr ""
+
+msgid "List style: compact single line"
+msgstr ""
+
+msgid "List style: minimal"
+msgstr ""
+
+msgid "Plugin"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "Copyright"
+msgstr ""
+
+msgid "License"
+msgstr ""
+
+msgid "End"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Defaults"
+msgstr ""
+
+msgid "Really close without saving settings?"
+msgstr ""
+
+msgid "Loading default settings will overwrite all settings, really load them?"
+msgstr ""
+
+msgid "Some changes require a GUI restart"
+msgstr ""
+
+msgid "Restart GUI now?"
+msgstr ""
+
+msgid "Path does not exist"
+msgstr ""
+
+msgid "File operation(s)"
+msgstr ""
+
+msgid "Remaining files"
+msgstr ""
+
+msgid "Cancelling, please wait"
+msgstr ""
+
+msgid "Cancelled"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "No file operation in process"
+msgstr ""
+
+msgid "File Task"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Loading"
+msgstr ""
+
+msgid "Deleting"
+msgstr ""
+
+msgid "Moving"
+msgstr ""
+
+msgid "Copying"
+msgstr ""
+
+msgid "FSTrim"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Hide"
+msgstr ""
+
+msgid "Processing"
+msgstr ""
+
+msgid "of"
+msgstr ""
+
+msgid "automatic"
+msgstr ""

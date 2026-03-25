@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<screen backgroundColor="transparent" flags="wfNoBorder" name="FileManagerProgress" position="fill">
+	<panel position="center,center" size="1180,250">
+		<panel name="Progress_1"/>
+		<widget font="Regular;24" halign="left" name="operation" position="10,10" size="e-20,43" transparent="1" valign="center"/>
+		<widget name="slider1" position="10,60" size="e-20,24"/>
+		<widget font="Regular;24" halign="left" name="name" position="10,90" size="e-20,43" transparent="1" valign="center"/>
+		<widget font="Regular;24" halign="left" name="status" position="10,130" size="e-20,43" transparent="1" valign="center"/>
+		<widget font="Regular;26" halign="left" position="10,190" render="Label" size="e-20,35" source="DiskSpace" transparent="1">
+			<convert type="COCDiskSpaceInfo">SpaceInfo</convert>
+		</widget>
+	</panel>
+</screen>

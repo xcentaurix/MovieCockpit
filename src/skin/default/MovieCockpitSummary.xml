@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<screen name="MovieCockpitSummary" position="0,0" size="400,240">
+	<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieCockpit/skin/images/display_bg.png" position="0,0" size="400,240" zPosition="-1"/>
+	<widget font="FdLcD;50" halign="center" position="5,5" render="Label" size="390,125" source="parent.Service" transparent="1" valign="center">
+		<convert type="COCEventName">Name</convert>
+	</widget>
+	<eLabel backgroundColor="white" position="10,145" size="380,2"/>
+	<widget font="FdLcD;60" position="5,160" render="Label" size="300,75" source="parent.Service" transparent="1" valign="center">
+		<convert type="COCMovieInfo">FileSize</convert>
+	</widget>
+	<widget font="FdLcD;60" halign="right" position="295,160" render="Label" size="100,75" source="parent.Service" transparent="1" valign="center">
+		<convert type="ServiceTime">Duration</convert>
+		<convert type="ClockToText">InMinutes</convert>
+	</widget>
+	<widget name="background" position="0,0" size="400,240" zPosition="2"/>
+	<widget name="lcd_pic_loading" position="150,70" size="100,100" transparent="1" zPosition="3"/>
+</screen>

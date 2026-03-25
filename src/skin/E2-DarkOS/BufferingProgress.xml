@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<screen backgroundColor="#ff000000" flags="wfNoBorder" name="BufferingProgress" position="center,center" size="100,100">
+	<widget alphatest="blend" name="pic" position="center,center" size="100,100"/>
+</screen>

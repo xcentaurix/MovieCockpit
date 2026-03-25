@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<screen backgroundColor="#ff000000" flags="wfNoBorder" name="ScreenPVRState" position="center,center" size="100,160" zPosition="1000">
+	<widget alphatest="blend" name="state_pic" position="0,0" size="100,100"/>
+	<widget backgroundColor="#000000" font="Regular;40" halign="center" name="state" position="0,110" size="100,54" transparent="1" valign="center"/>
+</screen>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<screen backgroundColor="background" flags="wfNoBorder" name="MovieInfoEPG" position="center,center" size="1200,820">
+	<widget font="Bold;32" noWrap="1" position="20,30" render="Label" size="1160,43" source="Title" transparent="1"/>
+	<widget font="Regular;30" position="25,90" render="Label" size="1150,40" source="Service" transparent="1">
+		<convert type="COCServiceTime">Duration</convert>
+		<convert type="COCClockToText">InMinutes</convert>
+	</widget>
+	<widget font="Regular;30" position="25,135" render="Label" size="1150,40" source="Service" transparent="1" valign="center">
+		<convert type="COCEventName">Description</convert>
+	</widget>
+	<widget font="Regular;26" foregroundColor="grey" options="movetype=swimming, direction=top, startpoint=0, startdelay=4000, wrap=1, always=0, repeat=1, oneshot=1, steptime=100" position="25,135" render="COCRunningText" size="1150,602" size2="1150,542" source="Service" transparent="1">
+		<convert type="COCEventName">ShortAndExtendedDescription</convert>
+	</widget>
+	<widget font="Regular;26" halign="center" name="key_red" position="0,770" size="300,35" transparent="1"/>
+	<widget font="Regular;26" halign="center" name="key_green" position="300,770" size="300,35" transparent="1"/>
+	<widget font="Regular;26" halign="center" name="key_yellow" position="600,770" size="300,35" transparent="1"/>
+	<widget font="Regular;26" halign="center" name="key_blue" position="900,770" size="300,35" transparent="1"/>
+	<eLabel backgroundColor="#ff0000" position="0,810" size="300,10"/>
+	<eLabel backgroundColor="#669900" position="300,810" size="300,10"/>
+	<eLabel backgroundColor="#e5b243" position="600,810" size="300,10"/>
+	<eLabel backgroundColor="#3366cc" position="900,810" size="300,10"/>
+</screen>
