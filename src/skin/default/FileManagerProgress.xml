@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<screen flags="wfNoBorder" name="FileManagerProgress" position="center,center" size="1200,410">
+	<widget font="Bold;32" noWrap="1" position="20,30" render="Label" size="1160,43" source="Title" transparent="1"/>
+	<widget font="Regular;32" halign="left" name="operation" position="20,90" size="1160,43" transparent="1"/>
+	<widget font="Regular;32" halign="left" name="name" position="20,145" size="1160,43" transparent="1"/>
+	<widget name="slider1" position="20,198" size="1160,25" transparent="1"/>
+	<widget font="Regular;32" halign="left" name="status" position="20,235" size="1160,43" transparent="1"/>
+	<widget font="Regular;26" halign="left" position="20,300" render="Label" size="1160,35" source="DiskSpace" transparent="1">
+		<convert type="COCDiskSpaceInfo">SpaceInfo</convert>
+	</widget>
+	<widget font="Regular;26" halign="center" name="key_red" position="0,360" size="300,35" transparent="1"/>
+	<widget font="Regular;26" halign="center" name="key_green" position="300,360" size="300,35" transparent="1"/>
+	<widget font="Regular;26" halign="center" name="key_yellow" position="600,360" size="300,35" transparent="1"/>
+	<widget font="Regular;26" halign="center" name="key_blue" position="900,360" size="300,35" transparent="1"/>
+	<eLabel backgroundColor="#ff0000" position="0,400" size="300,10"/>
+	<eLabel backgroundColor="#669900" position="300,400" size="300,10"/>
+	<eLabel backgroundColor="#e5b243" position="600,400" size="300,10"/>
+	<eLabel backgroundColor="#3366cc" position="900,400" size="300,10"/>
+</screen>

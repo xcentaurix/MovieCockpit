@@ -1,0 +1,762 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MovieCockpit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-04 14:01+0200\n"
+"PO-Revision-Date: 2023-06-04 15:21+0200\n"
+"Last-Translator: Dario Croci <spaeleus@croci.org>\n"
+"Language-Team: Dario Croci <spaeleus@croci.org>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.1\n"
+"X-Poedit-Basepath: ../../../../../../../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Plugin"
+msgstr "Plugin"
+
+msgid "Version"
+msgstr "Versione"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "License"
+msgstr "Licenza"
+
+msgid "Exit"
+msgstr "Uscire"
+
+msgid "Select function"
+msgstr "Selezionare funzione"
+
+msgid "Cancel"
+msgstr "Annullare"
+
+msgid "Open setup"
+msgstr "Impostazioni"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Directory up"
+msgstr "Directory padre"
+
+msgid "Toggle show deleted movies"
+msgstr "Commutare visual. video rimossi"
+
+msgid "Delete"
+msgstr "Rimuovere"
+
+msgid "Move"
+msgstr "Spostare"
+
+msgid "Copy"
+msgstr "Copiare"
+
+msgid "Empty trashcan"
+msgstr "Svuotare il cestino"
+
+msgid "Bookmarks"
+msgstr "Segnalibri"
+
+msgid "Archive"
+msgstr "Archivio"
+
+msgid "Reload cache"
+msgstr "Ricaricare cache"
+
+msgid "Remove all marks"
+msgstr "Rimuovere tutti i contrassegni"
+
+msgid "Setup"
+msgstr "Impostazioni"
+
+msgid "About"
+msgstr "Informazioni"
+
+msgid "Select plugin"
+msgstr "Selezionare plugin"
+
+msgid "End"
+msgstr "Fine"
+
+msgid "Stop playback"
+msgstr "Arrestare riproduzione"
+
+msgid "Skip forward"
+msgstr "Skip avanti"
+
+msgid "Skip backward"
+msgstr "Skip indietro"
+
+msgid "EPG Info"
+msgstr "Info EPG"
+
+msgid "Do you want to resume playback at position: %d:%02d:%02d?"
+msgstr "Riprendere la riproduzione dalla posizione %d:%02d:%02d?"
+
+msgid "DD.MM.YYYY"
+msgstr "GG.MM.AAAA"
+
+msgid "WD DD.MM.YYYY"
+msgstr "GS GG.MM.AAAA"
+
+msgid "DD.MM.YYYY HH:MM"
+msgstr "GG.MM.YYYY HH:MM"
+
+msgid "WD DD.MM.YYYY HH:MM"
+msgstr "GS GG.MM.AAAA HH:MM"
+
+msgid "DD.MM. HH:MM"
+msgstr "GG.MM. HH:MM"
+
+msgid "WD DD.MM. HH:MM"
+msgstr "GS GG.MM. HH:MM"
+
+msgid "YYYY/MM/DD"
+msgstr "AAAA/MM/GG"
+
+msgid "WD YYYY/MM/DD"
+msgstr "GS AAAA/MM/GG"
+
+msgid "YYYY/MM/DD HH:MM"
+msgstr "AAAA/MM/GG HH:MM"
+
+msgid "WD YYYY/MM/DD HH:MM"
+msgstr "GS AAAA/MM/GG HH:MM"
+
+msgid "MM/DD HH:MM"
+msgstr "MM/GG HH:MM"
+
+msgid "WD MM/DD HH:MM"
+msgstr "GS MM/GG HH:MM"
+
+msgid "off"
+msgstr "Off"
+
+msgid "Description"
+msgstr "Descrizione"
+
+msgid "(#)"
+msgstr "(#)"
+
+msgid "(#/GB)"
+msgstr "(#/GB)"
+
+msgid "(GB)"
+msgstr "(GB)"
+
+msgid "Date sort down"
+msgstr "Ordinamento: data (9-0)"
+
+msgid "Date sort up"
+msgstr "Ordinamento: data (0-9)"
+
+msgid "Alpha sort up"
+msgstr "Ordinamento: alfabetico (A-Z)"
+
+msgid "Alpha sort down"
+msgstr "Ordinamento: alfabetico (Z-A)"
+
+msgid "red"
+msgstr "Rosso"
+
+msgid "light red"
+msgstr "Rosso chiaro"
+
+msgid "dark red"
+msgstr "Rosso scuro"
+
+msgid "white"
+msgstr "Bianco"
+
+msgid "light grey"
+msgstr "Grigio chiaro"
+
+msgid "grey"
+msgstr "Grigio"
+
+msgid "dark grey"
+msgstr "Grigio scuro"
+
+msgid "black"
+msgstr "Nero"
+
+msgid "dark yellow"
+msgstr "Giallo scuro"
+
+msgid "yellow"
+msgstr "Giallo"
+
+msgid "automatic"
+msgstr "Automatico"
+
+msgid "beginning"
+msgstr "Inizio"
+
+msgid "first mark"
+msgstr "Primo contrassegno"
+
+msgid "event start"
+msgstr "Inizio evento"
+
+msgid "Save"
+msgstr "Salvare"
+
+msgid "Defaults"
+msgstr "Default"
+
+msgid "Really close without saving settings?"
+msgstr "Chiudere senza salvare le modifiche?"
+
+msgid "Loading default settings will overwrite all settings, really load them?"
+msgstr ""
+"Le impostazioni predefinite sovrascriveranno quelle presenti. Eseguire?"
+
+msgid "Some changes require a GUI restart"
+msgstr "Alcune modifiche richiedono il riavvio della GUI"
+
+msgid "Restart GUI now?"
+msgstr "Riavviare la GUI ora?"
+
+msgid "Select directory"
+msgstr "Selezionare directory"
+
+msgid "Path does not exist"
+msgstr "Percorso non presente"
+
+msgid "GENERAL"
+msgstr "GENERALE"
+
+msgid "Show bookmark content on start"
+msgstr "Mostrare contenuto segnalibri all'avvio"
+
+msgid ""
+"Select whether bookmark content is to be displayed at plugin start or the "
+"last directory."
+msgstr ""
+"Determinare se all'avvio debba essere mostrato contenuto segnalibri/ultima "
+"directory."
+
+msgid "Automatic cleanup of timers list"
+msgstr "Pulizia automatica elenco timer"
+
+msgid ""
+"Select whether completed recording timers should be deleted automatically."
+msgstr ""
+"Determinare se a registrazioni terminate rimuovere automaticamente i timer."
+
+msgid "PLAYBACK"
+msgstr "PLAYBACK"
+
+msgid "Resume video at last position"
+msgstr "Riprendere dall'ultima posizione"
+
+msgid "Select whether video should be resumed at last stop position."
+msgstr "Determinare se far ripartire il video dall'ultima posizione."
+
+msgid "Video start at"
+msgstr "Avviare il video da"
+
+msgid "Select at which position video is started at."
+msgstr "Determinate da quale posizione avviare il video."
+
+msgid "DISPLAY"
+msgstr "DISPLAY"
+
+msgid "Default sort mode"
+msgstr "Ordinamento predefinito"
+
+msgid "Select the start mode to be used at startup."
+msgstr "Selezionare la modalità di avvio da utilizzare all'avvio."
+
+msgid "Show directories"
+msgstr "Mostrare directory"
+
+msgid "Select whether directories should be displayed."
+msgstr "Selezionare quali directory visualizzare."
+
+msgid "Show directories information"
+msgstr "Mostrare informazioni sulla directory"
+
+msgid "Select which information should be displayed for directories."
+msgstr "Determinare quali informazioni visualizzare sulle directory."
+
+msgid "Show mount points"
+msgstr "Mostrare i punti di mount"
+
+msgid "Select whether to show mount_points or not."
+msgstr "Determinare se visualizzare i punti di mount."
+
+msgid "Watching in progress percent"
+msgstr "Considerare visto se oltre il (%)"
+
+msgid "Select percentage for videos that areconsidered being watched."
+msgstr ""
+"Percentuale del progresso di riproduzione per considerare il video visto."
+
+msgid "Finished watching percent"
+msgstr "Limite visualizzazione completa (%)"
+
+msgid "Select percentage for videos that areconsidered finished."
+msgstr ""
+"Percentuale del progresso di riproduzione per considerare il video terminato."
+
+msgid "Default color for video"
+msgstr "Colore predefinito video"
+
+msgid "Select the color for video."
+msgstr "Selezionare colore video."
+
+msgid "Default color for highlighted video"
+msgstr "Colore predefinito video evidenziati"
+
+msgid "Select the color for videos that are highlighted."
+msgstr "Selezionare colore video evidenziati."
+
+msgid "Default color for recording"
+msgstr "Colore predefinito registrazioni"
+
+msgid "Select the color for recording."
+msgstr "Selezionare colore registrazioni."
+
+msgid "Default color for highlighted recording"
+msgstr "Colore predefinito registrazioni evidenziate"
+
+msgid "Select the color for highlighted recording."
+msgstr "Selezionare colore registrazioni evidenziate."
+
+msgid "Default color for selected video"
+msgstr "Colore predefinito video selezionati"
+
+msgid "Select the color for selected video."
+msgstr "Selezionare colore video selezionati."
+
+msgid "Default color for highlighted selected video"
+msgstr "Colore predefinito video selezionato ed evidenziato"
+
+msgid "Select the color for selected and highlighted video."
+msgstr "Selezionare colore video selezionato ed evidenziato."
+
+msgid "RECORDING COVERS"
+msgstr "COVER REGISTRAZIONI"
+
+msgid "Download cover automatically for recording"
+msgstr "Scaricare automaticamente cover registrazioni"
+
+msgid ""
+"Select whether a cover should be automatically downloaded when recording a "
+"movie."
+msgstr ""
+"Determinare se scaricare automaticamente le cover delle registrazioni in "
+"corso."
+
+msgid "Cover source"
+msgstr "Origine cover"
+
+msgid "Select the cover source."
+msgstr "Selezionare l'origine cover."
+
+msgid "Show fallback cover"
+msgstr "Mostrare cover di riserva"
+
+msgid ""
+"Select whether a \"no cover available\" cover should be displayed when no "
+"cover is available."
+msgstr ""
+"Determinare se visualizzare cover \"cover non disponibile\" se nessuna cover "
+"reperibile."
+
+msgid "TRASHCAN"
+msgstr "CESTINO"
+
+msgid "Enable trashcan"
+msgstr "Abilitare cestino"
+
+msgid "Select whether the trashcan should be activated."
+msgstr "Determinare se abilitare cestino."
+
+msgid "Show trashcan directory"
+msgstr "Mostrare la cartella cestino"
+
+msgid "Select whether the trashcan should be displayed in the video list."
+msgstr "Determinare se mostrare il cestino nell'elenco video."
+
+msgid "Show trashcan information"
+msgstr "Mostrare informazioni cestino"
+
+msgid "Select the trashcan information to be shown."
+msgstr "Determinare se mostrare informazioni sul cestino."
+
+msgid "Enable auto trashcan cleanup"
+msgstr "Abilitare svuotamento automatico cestino"
+
+msgid "Select whether the trashcan should be cleaned automatically."
+msgstr "Determinare se svuotare automaticamente il cestino."
+
+msgid "File retention period in trashcan"
+msgstr "Permanenza file nel cestino"
+
+msgid ""
+"Select how many days the files should be kept in the trashcan before they "
+"are cleaned automatically."
+msgstr ""
+"Determinare i giorni di permanenza dei file nel cestino prima di rimuoverli "
+"automaticamente."
+
+msgid "LANGUAGE"
+msgstr "LINGUA"
+
+msgid "Preferred EPG language"
+msgstr "Lingua EPG preferita"
+
+msgid "Select the preferred EPG language."
+msgstr "Selezionare lingua EPG preferita."
+
+msgid "ARCHIVE"
+msgstr "ARCHIVIO"
+
+msgid "Enable"
+msgstr "Abilitare"
+
+msgid "Select whether archiving should be activated."
+msgstr "Determinare se abilitare l'archiviazione."
+
+msgid "Source"
+msgstr "Origine"
+
+msgid "Select the source bookmark for archiving."
+msgstr "Selezionare segnalibro origine archiviazione."
+
+msgid "Target"
+msgstr "Destinazione"
+
+msgid "Select the target bookmark for archiving."
+msgstr "Selezionare segnalibro destinazione archiviazione."
+
+msgid "DEBUG"
+msgstr "DEBUG"
+
+msgid "Log level"
+msgstr "Livello log"
+
+msgid "Select debug log level."
+msgstr "Selezionare livello log di debug."
+
+msgid "Log file path"
+msgstr "Percorso file di log"
+
+msgid "Select the path to be used for the debug log file."
+msgstr "Selezionare il percorso file di log."
+
+msgid "File operation(s)"
+msgstr "Operazioni file"
+
+msgid "Remaining files"
+msgstr "File rimanenti"
+
+msgid "Cancelling, please wait"
+msgstr "Attendere, rimozione..."
+
+msgid "Cancelled"
+msgstr "Rimosso"
+
+msgid "Please wait"
+msgstr "Attendere"
+
+msgid "Loading"
+msgstr "Caricamento"
+
+msgid "Deleting"
+msgstr "Rimozione..."
+
+msgid "Moving"
+msgstr "Spostamento..."
+
+msgid "Copying"
+msgstr "Copia..."
+
+msgid "Done"
+msgstr "Fatto"
+
+msgid "No file operation in process"
+msgstr "Nessuna operazione file in corso"
+
+msgid "Close"
+msgstr "Chiudere"
+
+msgid "Hide"
+msgstr "Nascondere"
+
+msgid "Processing"
+msgstr "Elaborazione..."
+
+msgid "of"
+msgstr "di"
+
+msgid "No event info available"
+msgstr "Info evento disponibili"
+
+msgid "TMDB plugin is not installed."
+msgstr "Plugin TMDB non installato."
+
+msgid "trashcan"
+msgstr "Cestino"
+
+msgid "Videos"
+msgstr "Video"
+
+msgid "Video file does not exist"
+msgstr "Il file video non esiste"
+
+msgid "Do you really want to reload the SQL cache?"
+msgstr "Ricaricare la cache SQL?"
+
+msgid "Stop recording(s)"
+msgstr "Arrestare le registrazioni"
+
+msgid "Permanently delete the selected video file(s) or dir(s)"
+msgstr "Rimuovere definitivamente video/directory selezionati"
+
+msgid "Move file(s)"
+msgstr "Spostare file"
+
+msgid "Copy file(s)"
+msgstr "Copiare file"
+
+msgid "is not mounted"
+msgstr "non è montato"
+
+msgid "Can't move recordings"
+msgstr "Impossibile spostare registrazioni"
+
+msgid "Can't copy recordings"
+msgstr "Impossibile copiare registrazioni"
+
+msgid ""
+"Archive source and/or target directory does not exist, please configure "
+"directories in setup."
+msgstr ""
+"Directory origine/destinazione archivio non presenti: configurare directory "
+"nelle impostazioni."
+
+msgid "Permanently delete all files in trashcan?"
+msgstr "Rimuovere definitivamente file nel cestino?"
+
+msgid "Not enough space in target directory for video file"
+msgstr "Spazio insufficiente in directory destinazione per il video"
+
+msgid "Color key red"
+msgstr "Tasto rosso"
+
+msgid "Color key green"
+msgstr "Tasto verde"
+
+msgid "Color key yellow"
+msgstr "Tasto giallo"
+
+msgid "Color key blue"
+msgstr "Tasto blu"
+
+msgid "Play"
+msgstr "Play"
+
+msgid "Toggle directories"
+msgstr "Commutare directory"
+
+msgid "Context menu"
+msgstr "Menu contestuale"
+
+msgid "Plugins menu"
+msgstr "Menu plugin"
+
+msgid "EPG info"
+msgstr "Info EPG"
+
+msgid "TMDB info"
+msgstr "Info TMDB"
+
+msgid "Cursor page up"
+msgstr "Cursore pagina su"
+
+msgid "Cursor page down"
+msgstr "Cursore pagina giù"
+
+msgid "Cursor up"
+msgstr "Cursore su"
+
+msgid "Cursor down"
+msgstr "Cursore giù"
+
+msgid "Bouquet up"
+msgstr "Bouquet su"
+
+msgid "Bouquet down"
+msgstr "Bouquet giù"
+
+msgid "Selection on/off"
+msgstr "Selezione On/Off"
+
+msgid "Selection off"
+msgstr "Selezione Off"
+
+msgid "Color buttons next"
+msgstr "Colore tasto successivo"
+
+msgid "Color buttons previous"
+msgstr "Colore tasto precedente"
+
+msgid "Selftest"
+msgstr "Autodiagnosi"
+
+msgid "File operations progress"
+msgstr "Progresso operazioni file"
+
+msgid "Recording Info"
+msgstr "Info registrazione"
+
+msgid "Sort mode"
+msgstr "Metodo ordinamento"
+
+msgid "Sort order"
+msgstr "Ordinamento"
+
+msgid "List type"
+msgstr "Tipo elenco"
+
+msgid "Reset progress"
+msgstr "Reset progresso"
+
+msgid "Date/Mount"
+msgstr "Data/Mount"
+
+msgid "Timer list"
+msgstr "Elenco timer"
+
+msgid "Restore"
+msgstr "Ripristinare"
+
+msgid "Trashcan"
+msgstr "Cestino"
+
+msgid "min"
+msgstr "min"
+
+msgid "COPYING"
+msgstr "COPIA..."
+
+msgid "MOVING"
+msgstr "SPOSTAMENTO..."
+
+msgid "DELETING"
+msgstr "RIMOZIONE..."
+
+msgid "up"
+msgstr "Su"
+
+msgid "directory"
+msgstr "directory"
+
+msgid "Manage recordings"
+msgstr "Gestire registrazioni"
+
+msgid "List style: default"
+msgstr "Stile elenco: predefinito"
+
+msgid "List style: compact with description"
+msgstr "Stile elenco: compatto con descrizione"
+
+msgid "List style: compact"
+msgstr "Stile elenco: compatto"
+
+msgid "List style: compact single line"
+msgstr "Stile elenco: compatto riga singola"
+
+msgid "List style: minimal"
+msgstr "Stile elenco: minimale"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

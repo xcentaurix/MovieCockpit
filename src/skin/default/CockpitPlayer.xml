@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<screen backgroundColor="secondBG" flags="wfNoBorder" name="CockpitPlayer" position="150,900" size="1620,150" title="CockpitPlayer">
+	<widget backgroundColor="secondBG" borderColor="black" borderWidth="2" font="Regular;36" foregroundColor="foreground" halign="center" position="c-624,6" render="Label" size="1248,74" source="Service" valign="center" zPosition="1">
+		<convert type="COCEventName">Name</convert>
+	</widget>
+	<ePixmap pixmap="dvr/scale1024.png" position="42,87" size="1536,12" zPosition="1"/>
+	<widget alphatest="blend" foregroundColor="yellow" position="42,87" render="Progress" size="1536,12" source="Service" transparent="1" zPosition="5">
+		<convert type="COCServicePosition">Position</convert>
+	</widget>
+	<widget alphatest="blend" foregroundColor="darkgrey" position="42,87" render="Progress" size="1536,12" source="Service" transparent="1" zPosition="6">
+		<convert type="COCBeforeTSPosition">Position</convert>
+	</widget>
+	<widget alphatest="blend" foregroundColor="red" position="42,87" render="Progress" size="1536,12" source="Service" transparent="1" zPosition="4">
+		<convert type="COCRecordPosition">Position</convert>
+	</widget>
+	<widget backgroundColor="secondBG" borderColor="black" borderWidth="2" font="Regular;33" foregroundColor="foreground" halign="left" position="42,46" render="Label" size="135,37" source="Service" valign="center" zPosition="4">
+		<convert type="COCServicePosition">Position,Negate</convert>
+	</widget>
+	<widget backgroundColor="secondBG" borderColor="black" borderWidth="2" font="Regular;33" foregroundColor="foreground" halign="right" position="1402,46" render="Label" size="175,37" source="Service" valign="center" zPosition="4">
+		<convert type="COCServicePosition">Remaining</convert>
+	</widget>
+	<widget alphatest="on" pixmap="buttons/rec.png" position="1590,79" render="Pixmap" size="30,30" source="session.RecordState" zPosition="3">
+		<convert type="ConditionalShowHide"/>
+	</widget>
+	<widget backgroundColor="secondBG" borderWidth="2" font="Regular;33" foregroundColor="foreground" halign="right" noWrap="1" position="1428,4" render="Label" size="150,37" source="Service" valign="center" zPosition="1">
+		<convert type="COCServicePosition">EndTime,ShowNoSeconds</convert>
+	</widget>
+	<widget backgroundColor="background" font="Bold;26" halign="center" position="c-109,105" render="Label" size="219,31" source="Service" transparent="1" valign="center">
+		<convert type="COCServicePosition">Length</convert>
+	</widget>
+	<widget alphatest="on" name="statusicon" pixmaps="icons/mp_play.png,icons/mp_pause.png,icons/mp_stop.png,icons/mp_forward.png,icons/mp_backward.png,icons/mp_slow.png" position="42,110" size="25,25" zPosition="5"/>
+	<widget backgroundColor="secondBG" borderColor="black" borderWidth="3" font="Regular;30" name="speed" position="72,105" size="110,40" transparent="1" zPosition="5"/>
+	<widget alphatest="on" pixmap="infobar/ico_dolby_on.png" position="1467,107" render="Pixmap" size="50,32" source="Service" zPosition="2">
+		<convert type="ServiceInfo">IsMultichannel</convert>
+		<convert type="ConditionalShowHide"/>
+	</widget>
+	<widget alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieCockpit/skin/default/images/ico_format_hd.png" position="1518,107" render="Pixmap" size="60,32" source="Service" zPosition="4">
+		<convert type="ServiceInfo">IsHD</convert>
+		<convert type="ConditionalShowHide"/>
+	</widget>
+	<widget alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieCockpit/skin/default/images/ico_format_16_9.png" position="1518,107" render="Pixmap" size="60,32" source="Service" zPosition="2">
+		<convert type="ServiceInfo">IsSDAndWidescreen</convert>
+		<convert type="ConditionalShowHide"/>
+	</widget>
+	<widget alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieCockpit/skin/default/images/ico_format_4_3.png" position="1518,107" render="Pixmap" size="60,32" source="Service" zPosition="2">
+		<convert type="ServiceInfo">IsSDAndNotWidescreen</convert>
+		<convert type="ConditionalShowHide"/>
+	</widget>
+</screen>

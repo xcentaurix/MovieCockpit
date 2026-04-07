@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<screen name="CockpitPlayerSummary" position="0,0" size="395,240">
+	<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieCockpit/skin/images/display_bg.png" position="0,0" size="395,240" zPosition="-1"/>
+	<widget font="FdLcD;50" halign="center" position="0,0" render="Label" size="395,125" source="parent.Service" transparent="1" valign="center">
+		<convert type="COCEventName">Name</convert>
+	</widget>
+	<widget alphatest="blend" borderWidth="1" foregroundColor="yellow" position="0,140" render="Progress" size="395,15" source="parent.Service" transparent="1" zPosition="2">
+		<convert type="COCServicePosition">Position</convert>
+	</widget>
+	<widget alphatest="blend" borderWidth="1" foregroundColor="darkgrey" position="0,140" render="Progress" size="395,15" source="parent.Service" transparent="1" zPosition="3">
+		<convert type="COCBeforeTSPosition">Position</convert>
+	</widget>
+	<widget alphatest="blend" borderWidth="1" foregroundColor="red" position="0,140" render="Progress" size="395,15" source="parent.Service" transparent="1" zPosition="1">
+		<convert type="COCRecordPosition">Position</convert>
+	</widget>
+	<widget font="FdLcD;60" halign="left" position="0,160" render="Label" size="230,80" source="parent.Service" transparent="1" valign="center">
+		<convert type="COCServicePosition">EndTime,ShowNoSeconds</convert>
+	</widget>
+	<widget font="FdLcD;60" halign="right" position="240,160" render="Label" size="150,80" source="parent.Service" transparent="1" valign="center">
+		<convert type="COCServicePosition">Remaining,ShowNoSeconds</convert>
+	</widget>
+</screen>
