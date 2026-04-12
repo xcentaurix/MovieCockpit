@@ -5,6 +5,7 @@
 from Components.config import config
 from Plugins.Plugin import PluginDescriptor
 from Plugins.SystemPlugins.MountCockpit.MountCockpit import MountCockpit
+from Plugins.SystemPlugins.CacheCockpit.FileManager import FileManager
 from Screens.InfoBar import InfoBar
 from Tools.BoundFunction import boundFunction
 from .__init__ import _
@@ -41,6 +42,9 @@ def autoStart(reason, **kwargs):
             loadPluginSkin("skin.xml")
     elif reason == 1:  # shutdown
         logger.info("--- shutdown")
+        filemanager = FileManager.getInstance(ID)
+        filemanager.purgeTrashcan(config.plugins.moviecockpit.trashcan_retention.value)
+        filemanager.archive()
 
 
 def Plugins(**__):

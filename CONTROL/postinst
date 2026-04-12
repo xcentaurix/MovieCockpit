@@ -6,6 +6,6 @@ echo "*          xcentaurix             *"
 echo "***********************************"
 echo ""
 echo "MovieCockpit plugin installed successfully."
-echo "Please restart DreamOS now!"
+echo "Please restart Enigma2 now!"
 echo ""
 exit 0

@@ -1,6 +1,6 @@
 Description: MovieCockpit
 Maintainer: xcentaurix
 Package: enigma2-plugin-extensions-moviecockpit
-Version: 0.4.21
+Version: 0.5.3
 Architecture: all
 Depends: python3-requests, python3-six, enigma2-plugin-skincomponents-cockpit, enigma2-plugin-systemplugins-mountcockpit, enigma2-plugin-systemplugins-cachecockpit, enigma2-plugin-systemplugins-jobcockpit

@@ -9,22 +9,22 @@
 		<convert type="COCDiskSpaceInfo">SpaceInfo</convert>
 	</widget>
 	<widget bar_size="90,14" date_width="230" enableWrapAround="1" font0="Regular;32" font1="Regular;30" font2="Regular;28" icon_size="35,35" name="list" picon_size="55,35" position="30,135" row_height="45" scrollbarMode="showAlways" scrollbarWidth="5" size="1200,855" spacer="15" start="0" transparent="1"/>
-	<widget backgroundColor="#FF000000" position="1260,135" render="COCCover" size="630,375" source="Service"/>
-	<widget font="Bold;32" position="1270,515" render="Label" size="620,80" source="Service" transparent="1" valign="center" zPosition="2">
+	<eLabel font="Bold;27" halign="left" position="8,1028" size="15,33" text="&lt;" transparent="1"/>
+	<eLabel font="Bold;27" halign="right" position="1898,1028" size="15,33" text="&gt;" transparent="1"/>
+	<widget backgroundColor="#FF000000" position="1260,90" render="COCCover" size="630,375" source="Service"/>
+	<widget font="Bold;32" position="1270,470" render="Label" size="620,80" source="Service" transparent="1" valign="center" zPosition="2">
 		<convert type="COCEventName">Name</convert>
 	</widget>
-	<widget font="Bold;30" position="1270,585" render="Label" size="280,34" source="Service" transparent="1" zPosition="2">
+	<widget font="Bold;30" position="1270,540" render="Label" size="280,34" source="Service" transparent="1" zPosition="2">
 		<convert type="ServiceTime">Duration</convert>
 		<convert type="ClockToText">InMinutes</convert>
 	</widget>
-	<widget font="Bold;30" noWrap="1" position="1270,635" render="Label" size="630,40" source="Service" transparent="1" valign="center">
+	<widget font="Bold;30" noWrap="1" position="1270,590" render="Label" size="630,40" source="Service" transparent="1" valign="center">
 		<convert type="COCEventName">Description</convert>
 	</widget>
-	<widget font="Regular;25" options="movetype=swimming, direction=top, startpoint=0, startdelay=4000, wrap=1, always=0, repeat=1, oneshot=1, steptime=100" position="1270,635" render="COCRunningText" size="630,345" size2="630,290" source="Service" transparent="1">
+	<widget font="Regular;25" options="movetype=swimming, direction=top, startpoint=0, startdelay=4000, wrap=1, always=0, repeat=1, oneshot=1, steptime=100" position="1270,590" render="COCRunningText" size="630,345" size2="630,290" source="Service" transparent="1">
 		<convert type="COCEventName">ShortAndExtendedDescription</convert>
 	</widget>
-	<eLabel font="Bold;27" halign="left" position="8,1028" size="15,33" text="&lt;" transparent="1"/>
-	<eLabel font="Bold;27" halign="right" position="1898,1028" size="15,33" text="&gt;" transparent="1"/>
 	<widget font="Regular;26" halign="center" name="key_red" position="0,1030" size="480,35" transparent="1"/>
 	<widget font="Regular;26" halign="center" name="key_green" position="480,1030" size="480,35" transparent="1"/>
 	<widget font="Regular;26" halign="center" name="key_yellow" position="960,1030" size="480,35" transparent="1"/>
