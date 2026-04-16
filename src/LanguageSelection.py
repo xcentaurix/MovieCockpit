@@ -13,13 +13,12 @@ class LanguageSelection():
 
     def getLangChoices(self, sys_lang):
         logger.info("sys_lang: %s", sys_lang)
-        if sys_lang == "en_EN":
-            sys_lang = "en_GB"
-        langs = language.lang.get(sys_lang, {})
         choices = []
-        for lang in langs:
-            if "_" in lang:
-                choice = (lang[:2], langs[lang])
+        for lang_key, lang_data in language.lang.items():
+            choice = (lang_key[:2], lang_data[0])
+            if choice not in choices:
                 choices.append(choice)
+        if not choices:
+            choices.append(("en", "English"))
         logger.debug("choices: %s", choices)
         return choices

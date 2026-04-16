@@ -675,6 +675,9 @@ class MovieCockpit(Screen, HelpableScreen, CockpitContextMenu, Actions, CutList)
     def execFileOpCallback(self, file_op, path, target_dir, error):
         logger.info("file_op: %s, path: %s, target_dir: %s, error: %s, self.return_path: %s",
                     file_op, path, target_dir, error, self.return_path)
+        if self.movie_list is None:
+            logger.debug("screen already closed, skipping callback")
+            return
         self.movie_list.loadList(self.movie_list.load_dir, self.return_path)
         if error == FILE_OP_ERROR_NO_DISKSPACE:
             self.session.open(

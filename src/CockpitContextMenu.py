@@ -64,7 +64,6 @@ class CockpitContextMenu():
         self.session.openWithCallback(
             self.menuCallback,
             ChoiceBox,
-            windowTitle=_("Functions") if self.menu_mode == MENU_FUNCTIONS else _("Plugins"),
             title=_("Please select a function") if self.menu_mode == MENU_FUNCTIONS else _("Please select a plugin"),
             list=options,
             keys=[]

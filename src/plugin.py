@@ -10,7 +10,6 @@ from Tools.BoundFunction import boundFunction
 from .__init__ import _
 from .Debug import logger
 from .Version import ID, VERSION
-from .SkinUtils import loadPluginSkin
 from .ConfigScreenInit import ConfigScreenInit
 from .MovieCockpit import MovieCockpit
 from .ConfigInit import ConfigInit
@@ -38,7 +37,6 @@ def autoStart(reason, **kwargs):
                 config.plugins.moviecockpit.epglang)
             MountCockpit.getInstance().registerBookmarks(
                 ID, config.plugins.moviecockpit.bookmarks.value)
-            loadPluginSkin("skin.xml")
     elif reason == 1:  # shutdown
         logger.info("--- shutdown")
 

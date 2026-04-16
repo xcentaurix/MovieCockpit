@@ -5,7 +5,6 @@
 import os
 from pathlib import Path
 from Components.config import config
-from skin import loadSkin
 from .Debug import logger
 
 
@@ -20,9 +19,3 @@ def getSkinPath(file_name):
         skin_path = Path(__file__).parent / "skin" / file_name
     logger.info("skin_path: %s", skin_path)
     return str(skin_path)
-
-
-def loadPluginSkin(file_name):
-    primary_skin = config.skin.primary_skin.value.split("/")[0]
-    if primary_skin == "E2-DarkOS":
-        loadSkin(getSkinPath(file_name))
