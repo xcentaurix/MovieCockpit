@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress XmlUnboundNsPrefix -->
+<setupxml>
+	<setup key="moviecockpit" title="Setup">
+		<item text="Show bookmark content on start" description="Select whether bookmark content is to be displayed at plugin start or the last directory.">config.plugins.moviecockpit.list_start_home</item>
+		<item text="Automatic cleanup of timers list" description="Select whether completed recording timers should be deleted automatically.">config.plugins.moviecockpit.timer_autoclean</item>
+		<item text="Resume video at last position" description="Select whether video should be resumed at last stop position.">config.plugins.moviecockpit.movie_resume_at_last_pos</item>
+		<item text="Video start at" description="Select at which position video is started at.">config.plugins.moviecockpit.movie_start_position</item>
+		<item text="Default sort mode" description="Select the start mode to be used at startup.">config.plugins.moviecockpit.list_sort</item>
+		<item text="Show directories information" description="Select which information should be displayed for directories.">config.plugins.moviecockpit.directories_info</item>
+		<item text="Show mount points" description="Select whether to show mount points or not.">config.plugins.moviecockpit.list_show_mount_points</item>
+		<item text="Watching in progress percent" description="Select percentage for videos that are considered being watched.">config.plugins.moviecockpit.movie_watching_percent</item>
+		<item text="Finished watching percent" description="Select percentage for videos that are considered finished.">config.plugins.moviecockpit.movie_finished_percent</item>
+		<item text="Default color for video" description="Select the color for video.">config.plugins.moviecockpit.color</item>
+		<item text="Default color for highlighted video" description="Select the color for videos that are highlighted.">config.plugins.moviecockpit.color_sel</item>
+		<item text="Default color for recording" description="Select the color for recording.">config.plugins.moviecockpit.recording_color</item>
+		<item text="Default color for highlighted recording" description="Select the color for highlighted recording.">config.plugins.moviecockpit.recording_color_sel</item>
+		<item text="Default color for selected video" description="Select the color for selected video.">config.plugins.moviecockpit.selection_color</item>
+		<item text="Default color for highlighted selected video" description="Select the color for selected and highlighted video.">config.plugins.moviecockpit.selection_color_sel</item>
+		<item text="Download cover automatically for recording" description="Select whether a cover should be automatically downloaded when recording a movie.">config.plugins.moviecockpit.cover_auto_download</item>
+		<item text="Cover source" description="Select the cover source.">config.plugins.moviecockpit.cover_source</item>
+		<item text="Show fallback cover" description="Select whether a no cover available cover should be displayed when no cover is available.">config.plugins.moviecockpit.cover_fallback</item>
+		<item text="Show trashcan directory" description="Select whether the trashcan should be displayed in the video list.">config.plugins.moviecockpit.trashcan_show</item>
+		<item text="Show trashcan information" description="Select the trashcan information to be shown.">config.plugins.moviecockpit.trashcan_info</item>
+		<item text="Enable auto trashcan cleanup" description="Select whether the trashcan should be cleaned automatically.">config.plugins.moviecockpit.trashcan_clean</item>
+		<item text="File retention period in trashcan" description="Select how many days the files should be kept in the trashcan before they are cleaned automatically.">config.plugins.moviecockpit.trashcan_retention</item>
+		<item text="Preferred EPG language" description="Select the preferred EPG language.">config.plugins.moviecockpit.epglang</item>
+		<item text="Enable archive" description="Select whether archiving should be activated.">config.plugins.moviecockpit.archive_enable</item>
+		<item text="Archive source" description="Select the source bookmark for archiving.">config.plugins.moviecockpit.archive_source_dir</item>
+		<item text="Archive target" description="Select the target bookmark for archiving.">config.plugins.moviecockpit.archive_target_dir</item>
+		<item text="Cache directory" description="Select directory for cache database file.">config.plugins.moviecockpit.database_directory</item>
+		<item level="2" text="Log level" description="Select debug log level.">config.plugins.moviecockpit.debug_log_level</item>
+	</setup>
+</setupxml>

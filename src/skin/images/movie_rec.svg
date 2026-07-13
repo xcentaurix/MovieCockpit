@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg1" _SVGFile__filename="oldscale/actions/player_record.svg" version="1.0" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <path id="path1711" transform="matrix(-1.14 3.5598e-7 -3.5598e-7 -1.14 21.218 53.719)" d="m14.5 20.805a22.203 22.203 0 1 1-44.406 0 22.203 22.203 0 1 1 44.406 0z" color="#000000" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.127"/>
+ <path id="path1710" transform="matrix(-1.14 3.5598e-7 -3.5598e-7 -1.14 21.218 53.719)" d="m14.5 20.805c0 12.256-9.9471 22.203-22.203 22.203s-22.203-9.947-22.203-22.203 9.947-22.202 22.203-22.202c12.256-4e-4 22.203 9.9465 22.203 22.202z" color="#000000" fill="#f00" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.7412"/>
+ <metadata id="metadata7071">
+  <rdf:RDF>
+   <cc:Work>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+    <dc:publisher>
+     <cc:Agent rdf:about="http://openclipart.org/">
+      <dc:title>Openclipart</dc:title>
+     </cc:Agent>
+    </dc:publisher>
+    <dc:title/>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+</svg>
