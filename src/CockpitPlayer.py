@@ -21,13 +21,11 @@ from .CutListUtils import ptsToSeconds, getCutListLast, getCutListFirst
 from .CockpitCueSheet import CockpitCueSheet
 from .CockpitPVRState import CockpitPVRState
 from .CockpitSeek import CockpitSeek
-from .FileUtils import readFile
-from .SkinUtils import getSkinPath
 from .DelayTimer import DelayTimer
+from .SkinUtils import getSkinPath
 
 
 class CockpitPlayerSummary(ScreenSummary):
-    skin = readFile(getSkinPath("CockpitPlayerSummary.xml"))
 
     def __init__(self, session, parent):
         Screen.__init__(self, session, parent)
@@ -36,7 +34,6 @@ class CockpitPlayerSummary(ScreenSummary):
 class CockpitPlayer(
         Screen, HelpableScreen, InfoBarBase, InfoBarNotifications, InfoBarShowHide, InfoBarAudioSelection, InfoBarSubtitleSupport,
         CockpitCueSheet, CockpitSeek, CockpitPVRState, CutList):
-    skin = readFile(getSkinPath("CockpitPlayer.xml"))
 
     ENABLE_RESUME_SUPPORT = False
     ALLOW_SUSPEND = True

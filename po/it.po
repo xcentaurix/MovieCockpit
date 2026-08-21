@@ -666,6 +666,12 @@ msgstr ""
 msgid "Enable archive"
 msgstr ""
 
+msgid "Infobar/Play"
+msgstr ""
+
+msgid "Play/Pause"
+msgstr ""
+
 msgid "File Task"
 msgstr ""
 

@@ -1,8 +1,6 @@
 # MovieCockpit (MVC)
 
-![Screenshot](mvc.png)
-
-![Screenshot](mvc2.png)
+![Screenshot](pic1.jpg)
 
 ## Features
 - MVC is a movie list plugin for Open Enigma2 settop boxes (OpenViX and compatible distributions).

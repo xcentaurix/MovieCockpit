@@ -13,7 +13,7 @@ from .SkinUtils import loadPluginSkin
 from .Version import ID, VERSION
 from .SetupScreen import SetupScreen
 from .MovieCockpit import MovieCockpit
-from .ConfigInit import ConfigInit
+from . import ConfigInit  # noqa: F401, pylint: disable=unused-import
 
 loadPluginSkin()
 
@@ -45,14 +45,19 @@ def autoStart(reason, **kwargs):
 
 
 def Plugins(**__):
-    ConfigInit()
-
     descriptors = [
         PluginDescriptor(
             where=[
                 PluginDescriptor.WHERE_AUTOSTART,
                 PluginDescriptor.WHERE_SESSIONSTART,
             ],
+            # StartEnigma.py runs WHERE_SESSIONSTART plugins in ascending
+            # PluginDescriptor.weight order (default 0); a positive weight
+            # here guarantees our InfoBar.showMovies patch below is applied
+            # after other movie-list plugins (e.g. EnhancedMovieCenter, which
+            # patches the same hook at weight 0), so PVR/Video always opens
+            # MovieCockpit regardless of Plugins/Extensions scan order.
+            weight=1,
             fnc=autoStart
         ),
         PluginDescriptor(

@@ -5,7 +5,7 @@
 import os
 from Components.config import config, ConfigSet, ConfigDirectory, ConfigNumber, ConfigSelection, ConfigSelectionNumber, ConfigYesNo, ConfigSubsection, ConfigNothing, NoSave
 from Components.Language import language
-from .Debug import logger, log_levels, initLogging
+from .Debug import logger
 from .__init__ import _
 from .LanguageSelection import LanguageSelection
 from .MovieCoverDownloadUtils import choices_cover_source
@@ -85,77 +85,70 @@ def initBookmarks():
     return bookmarks
 
 
-class ConfigInit(LanguageSelection):
+logger.info("...")
+lang = language.getActiveLanguage()
+logger.debug("lang: %s", lang)
+lang_choices = LanguageSelection().getLangChoices(lang)
+if not hasattr(config.plugins, "moviecockpit"):
+    config.plugins.moviecockpit = ConfigSubsection()
+config.plugins.moviecockpit.fake_entry = NoSave(ConfigNothing())
+config.plugins.moviecockpit.timer_autoclean = ConfigYesNo(
+    default=False)
+config.plugins.moviecockpit.cover_auto_download = ConfigYesNo(
+    default=False)
+config.plugins.moviecockpit.cover_fallback = ConfigYesNo(default=True)
+config.plugins.moviecockpit.cover_source = ConfigSelection(
+    default="tvs_id", choices=choices_cover_source)
+config.plugins.moviecockpit.epglang = ConfigSelection(
+    default=lang[:2], choices=lang_choices)
+config.plugins.moviecockpit.list_start_home = ConfigYesNo(default=True)
+config.plugins.moviecockpit.movie_description_delay = ConfigNumber(
+    default=200)
+config.plugins.moviecockpit.list_show_mount_points = ConfigYesNo(
+    default=False)
+config.plugins.moviecockpit.movie_watching_percent = ConfigSelectionNumber(
+    0, 30, 1, default=10)
+config.plugins.moviecockpit.movie_finished_percent = ConfigSelectionNumber(
+    50, 100, 1, default=90)
+config.plugins.moviecockpit.movie_date_format = ConfigSelection(
+    default="%d.%m.%Y %H:%M", choices=choices_date)
+config.plugins.moviecockpit.movie_resume_at_last_pos = ConfigYesNo(
+    default=True)
+config.plugins.moviecockpit.movie_start_position = ConfigSelection(default="event_start", choices=[(
+    "beginning", _("beginning")), ("first_mark", _("first mark")), ("event_start", _("event start"))])
+config.plugins.moviecockpit.trashcan_clean = ConfigYesNo(default=True)
+config.plugins.moviecockpit.trashcan_retention = ConfigSelectionNumber(
+    0, 30, 1, default=3)
+config.plugins.moviecockpit.trashcan_show = ConfigYesNo(default=True)
+config.plugins.moviecockpit.trashcan_info = ConfigSelection(
+    default="CS", choices=choices_dir_info)
+config.plugins.moviecockpit.list_content = ConfigNumber(default=1)
+config.plugins.moviecockpit.directories_info = ConfigSelection(
+    default="CS", choices=choices_dir_info)
+config.plugins.moviecockpit.color = ConfigSelection(
+    default="#bababa", choices=choices_color_selection)
+config.plugins.moviecockpit.color_sel = ConfigSelection(
+    default="#ffffff", choices=choices_color_selection)
+config.plugins.moviecockpit.recording_color = ConfigSelection(
+    default="#ff1616", choices=choices_color_recording)
+config.plugins.moviecockpit.recording_color_sel = ConfigSelection(
+    default="#ff3838", choices=choices_color_recording)
+config.plugins.moviecockpit.selection_color = ConfigSelection(
+    default="#cccc00", choices=choices_color_mark)
+config.plugins.moviecockpit.selection_color_sel = ConfigSelection(
+    default="#ffff00", choices=choices_color_mark)
+config.plugins.moviecockpit.list_sort = ConfigSelection(
+    default="0", choices=choices_sort)
+config.plugins.moviecockpit.archive_enable = ConfigYesNo(default=False)
+config.plugins.moviecockpit.archive_source_dir = ConfigDirectory(
+    default="/media/hdd/movie")
+config.plugins.moviecockpit.archive_target_dir = ConfigDirectory(
+    default="/media/hdd/movie")
+config.plugins.moviecockpit.database_directory = ConfigDirectory(
+    default="/etc/enigma2")
+config.plugins.moviecockpit.piconspath = ConfigDirectory(default="/usr/share/enigma2/picon")
 
-    def __init__(self):
-        logger.info("...")
-        LanguageSelection.__init__(self)
-        lang = language.getActiveLanguage()
-        logger.debug("lang: %s", lang)
-        lang_choices = self.getLangChoices(lang)
-        config.plugins.moviecockpit = ConfigSubsection()
-        config.plugins.moviecockpit.fake_entry = NoSave(ConfigNothing())
-        config.plugins.moviecockpit.timer_autoclean = ConfigYesNo(
-            default=False)
-        config.plugins.moviecockpit.cover_auto_download = ConfigYesNo(
-            default=False)
-        config.plugins.moviecockpit.cover_fallback = ConfigYesNo(default=True)
-        config.plugins.moviecockpit.cover_source = ConfigSelection(
-            default="tvs_id", choices=choices_cover_source)
-        config.plugins.moviecockpit.epglang = ConfigSelection(
-            default=lang[:2], choices=lang_choices)
-        config.plugins.moviecockpit.list_start_home = ConfigYesNo(default=True)
-        config.plugins.moviecockpit.movie_description_delay = ConfigNumber(
-            default=200)
-        config.plugins.moviecockpit.list_show_mount_points = ConfigYesNo(
-            default=False)
-        config.plugins.moviecockpit.movie_watching_percent = ConfigSelectionNumber(
-            0, 30, 1, default=10)
-        config.plugins.moviecockpit.movie_finished_percent = ConfigSelectionNumber(
-            50, 100, 1, default=90)
-        config.plugins.moviecockpit.movie_date_format = ConfigSelection(
-            default="%d.%m.%Y %H:%M", choices=choices_date)
-        config.plugins.moviecockpit.movie_resume_at_last_pos = ConfigYesNo(
-            default=True)
-        config.plugins.moviecockpit.movie_start_position = ConfigSelection(default="event_start", choices=[(
-            "beginning", _("beginning")), ("first_mark", _("first mark")), ("event_start", _("event start"))])
-        config.plugins.moviecockpit.trashcan_clean = ConfigYesNo(default=True)
-        config.plugins.moviecockpit.trashcan_retention = ConfigSelectionNumber(
-            0, 30, 1, default=3)
-        config.plugins.moviecockpit.trashcan_show = ConfigYesNo(default=True)
-        config.plugins.moviecockpit.trashcan_info = ConfigSelection(
-            default="CS", choices=choices_dir_info)
-        config.plugins.moviecockpit.list_content = ConfigNumber(default=1)
-        config.plugins.moviecockpit.directories_info = ConfigSelection(
-            default="CS", choices=choices_dir_info)
-        config.plugins.moviecockpit.color = ConfigSelection(
-            default="#bababa", choices=choices_color_selection)
-        config.plugins.moviecockpit.color_sel = ConfigSelection(
-            default="#ffffff", choices=choices_color_selection)
-        config.plugins.moviecockpit.recording_color = ConfigSelection(
-            default="#ff1616", choices=choices_color_recording)
-        config.plugins.moviecockpit.recording_color_sel = ConfigSelection(
-            default="#ff3838", choices=choices_color_recording)
-        config.plugins.moviecockpit.selection_color = ConfigSelection(
-            default="#cccc00", choices=choices_color_mark)
-        config.plugins.moviecockpit.selection_color_sel = ConfigSelection(
-            default="#ffff00", choices=choices_color_mark)
-        config.plugins.moviecockpit.list_sort = ConfigSelection(
-            default="0", choices=choices_sort)
-        config.plugins.moviecockpit.debug_log_level = ConfigSelection(
-            default="INFO", choices=list(log_levels.keys()))
-        config.plugins.moviecockpit.archive_enable = ConfigYesNo(default=False)
-        config.plugins.moviecockpit.archive_source_dir = ConfigDirectory(
-            default="/media/hdd/movie")
-        config.plugins.moviecockpit.archive_target_dir = ConfigDirectory(
-            default="/media/hdd/movie")
-        config.plugins.moviecockpit.database_directory = ConfigDirectory(
-            default="/etc/enigma2")
-        config.plugins.moviecockpit.piconspath = ConfigDirectory(default="/usr/share/enigma2/picon")
-
-        config.plugins.moviecockpit.bookmarks = ConfigSet([], [])
-        if not config.plugins.moviecockpit.bookmarks.value:
-            config.plugins.moviecockpit.bookmarks.value = initBookmarks()
-            config.plugins.moviecockpit.bookmarks.save()
-
-        initLogging()
+config.plugins.moviecockpit.bookmarks = ConfigSet([], [])
+if not config.plugins.moviecockpit.bookmarks.value:
+    config.plugins.moviecockpit.bookmarks.value = initBookmarks()
+    config.plugins.moviecockpit.bookmarks.save()
