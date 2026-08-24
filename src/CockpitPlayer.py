@@ -28,7 +28,7 @@ from .SkinUtils import getSkinPath
 class CockpitPlayerSummary(ScreenSummary):
 
     def __init__(self, session, parent):
-        Screen.__init__(self, session, parent)
+        ScreenSummary.__init__(self, session, parent=parent)
 
 
 class CockpitPlayer(

@@ -24,7 +24,7 @@
 		</widget>
 		<widget alphatest="blend" name="pic_loading" position="559,421" size="100,100" zPosition="3"/>
 		<widget backgroundColorSelected="keyBlue" bar_size="90,14" date_width="230" enableWrapAround="1" font0="Regular;32" font1="Regular;30" font2="Regular;28" icon_size="35,35" name="list" picon_size="55,35" position="30,135" row_height="45" scrollbarMode="showAlways" scrollbarWidth="5" size="1200,855" spacer="15" start="0" transparent="1"/>
-		<widget backgroundColor="transparent" position="1260,135" render="COCCover" size="630,375" source="Service"/>
+		<widget alphatest="blend" backgroundColor="secondBG" position="1260,135" render="COCCover" size="630,375" source="Service" transparent="1"/>
 		<widget font="Bold;32" position="1270,515" render="Label" size="620,80" source="Service" transparent="1" valign="center" zPosition="2">
 			<convert type="COCEventName">Name</convert>
 		</widget>
@@ -40,27 +40,24 @@
 		</widget>
 		<eLabel backgroundColor="barBG" position="0,1000" size="1920,80" zPosition="0"/>
 		<eLabel backgroundColor="separator" position="0,1000" size="1920,2" zPosition="1"/>
-		<widget font="Regular;26" foregroundColor="grey" halign="center" name="level" position="0,1004" size="96,56" transparent="1" valign="center" zPosition="2"/>
-		<widget font="Regular;26" foregroundColor="keyRed" halign="center" name="key_red" position="96,1004" size="456,56" transparent="1" valign="center" zPosition="2"/>
-		<widget font="Regular;26" foregroundColor="keyGreen" halign="center" name="key_green" position="552,1004" size="456,56" transparent="1" valign="center" zPosition="2"/>
-		<widget font="Regular;26" foregroundColor="keyYellow" halign="center" name="key_yellow" position="1008,1004" size="456,56" transparent="1" valign="center" zPosition="2"/>
-		<widget font="Regular;26" foregroundColor="keyBlue" halign="center" name="key_blue" position="1464,1004" size="456,56" transparent="1" valign="center" zPosition="2"/>
+		<widget font="Regular;32" foregroundColor="grey" halign="center" name="level" position="0,1004" size="96,56" transparent="1" valign="center" zPosition="2"/>
+		<widget font="Regular;32" foregroundColor="keyRed" halign="center" name="key_red" position="96,1004" size="456,56" transparent="1" valign="center" zPosition="2"/>
+		<widget font="Regular;32" foregroundColor="keyGreen" halign="center" name="key_green" position="552,1004" size="456,56" transparent="1" valign="center" zPosition="2"/>
+		<widget font="Regular;32" foregroundColor="keyYellow" halign="center" name="key_yellow" position="1008,1004" size="456,56" transparent="1" valign="center" zPosition="2"/>
+		<widget font="Regular;32" foregroundColor="keyBlue" halign="center" name="key_blue" position="1464,1004" size="456,56" transparent="1" valign="center" zPosition="2"/>
 	</screen>
-	<screen name="MovieCockpitSummary" position="0,0" size="400,240">
-		<ePixmap pixmap="~/../images/display_bg.png" position="0,0" size="400,240" zPosition="-1"/>
-		<widget font="FdLcD;50" halign="center" position="5,5" render="Label" size="390,125" source="parent.Service" transparent="1" valign="center">
-			<convert type="COCEventName">Name</convert>
+	<screen name="MovieCockpitSummary" position="fill" resolution="396,240">
+		<ePixmap alphatest="on" pixmap="~/../images/display_bg.png" position="0,0" size="e,e" zPosition="-10"/>
+		<widget font="FdLcD;36" halign="center" position="0,0" render="Label" size="e-3,e-80" source="parent.Service" transparent="1" valign="center" zPosition="2">
+			<convert type="ServiceName">Name</convert>
 		</widget>
-		<eLabel backgroundColor="white" position="10,145" size="380,2"/>
-		<widget font="FdLcD;60" position="5,160" render="Label" size="300,75" source="parent.Service" transparent="1" valign="center">
+		<widget font="FdLcD;60" halign="left" position="0,e-80" render="Label" size="300,80" source="parent.Service" transparent="1" valign="center">
 			<convert type="COCMovieInfo">FileSize</convert>
 		</widget>
-		<widget font="FdLcD;60" halign="right" position="295,160" render="Label" size="100,75" source="parent.Service" transparent="1" valign="center">
-			<convert type="ServiceTime">Duration</convert>
+		<widget font="FdLcD;60" halign="right" position="300,e-80" render="Label" size="92,80" source="parent.Service" transparent="1" valign="center">
+			<convert type="COCMovieInfo">MovieDuration</convert>
 			<convert type="ClockToText">InMinutes</convert>
 		</widget>
-		<widget name="background" position="0,0" size="400,240" zPosition="2"/>
-		<widget name="lcd_pic_loading" position="150,70" size="100,100" transparent="1" zPosition="3"/>
 	</screen>
 	<screen backgroundColor="panelBG" flags="wfNoBorder" name="MovieInfoEPG" position="center,center" resolution="1920,1080" size="1200,820" transparent="0">
 		<eLabel backgroundColor="barBG" position="0,0" size="e,55"/>
@@ -159,8 +156,6 @@
 		<widget font="Bold;26" foregroundColor="white" halign="center" position="c-109,105" render="Label" size="219,31" source="Service" transparent="1" valign="center">
 			<convert type="COCServicePosition">Length</convert>
 		</widget>
-		<widget alphatest="on" name="statusicon" pixmaps="icons/mp_play.png,icons/mp_pause.png,icons/mp_stop.png,icons/mp_forward.png,icons/mp_backward.png,icons/mp_slow.png" position="42,110" size="25,25" zPosition="5"/>
-		<widget backgroundColor="secondBG" borderColor="black" borderWidth="3" font="Regular;32" name="speed" position="72,105" size="110,40" transparent="1" zPosition="5"/>
 		<widget alphatest="on" pixmap="infobar/ico_dolby_on.png" position="1467,107" render="Pixmap" size="50,32" source="Service" zPosition="2">
 			<convert type="ServiceInfo">IsMultichannel</convert>
 			<convert type="ConditionalShowHide"/>
@@ -178,7 +173,8 @@
 			<convert type="ConditionalShowHide"/>
 		</widget>
 	</screen>
-	<screen backgroundColor="panelBG" name="CockpitPlayerSummary" position="0,0" size="395,240">
+	<screen name="CockpitPlayerSummary" position="fill" resolution="396,240">
+		<ePixmap alphatest="on" pixmap="~/../images/display_bg.png" position="0,0" size="e,e" zPosition="-10"/>
 		<widget font="FdLcD;50" halign="center" position="0,0" render="Label" size="395,125" source="parent.Service" transparent="1" valign="center">
 			<convert type="COCEventName">Name</convert>
 		</widget>

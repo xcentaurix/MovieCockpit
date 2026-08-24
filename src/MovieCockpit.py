@@ -46,8 +46,7 @@ class MovieCockpitSummary(ScreenSummary):
 
     def __init__(self, session, parent):
         logger.info("...")
-        Screen.__init__(self, session, parent)
-        self.skinName = "MovieCockpitSummary"
+        ScreenSummary.__init__(self, session, parent=parent)
         self["lcd_pic_loading"] = Pixmap()
         self["background"] = Pixmap()
 
