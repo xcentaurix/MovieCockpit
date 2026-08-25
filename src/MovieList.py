@@ -7,14 +7,11 @@ import pickle
 from time import time
 from datetime import datetime
 from Components.config import config
-from Components.GUIComponent import GUIComponent
-from Components.MultiContent import MultiContentEntryText, MultiContentEntryPixmapAlphaBlend, MultiContentEntryProgress
+from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
-from enigma import eListbox, eListboxPythonMultiContent
-from enigma import RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER
 from Plugins.SystemPlugins.MountCockpit.MountCockpit import MountCockpit
 from Plugins.SystemPlugins.CacheCockpit.FileManager import FileManager
-from skin import parseColor, parseFont, parseSize
+from skin import parseColor
 from .Debug import logger
 from .Version import ID
 from .__init__ import _
@@ -31,14 +28,26 @@ from .RecordingUtils import isRecording, isDownloadRecording
 from .JobUtils import getPendingJob
 
 
-class MovieList(GUIComponent, Sorting, ServiceCenter):
+# Extended fields appended after the raw FILE_IDX_* tuple (0-19) for the "list" Source
+# consumed by the skin's TemplatedMultiContentEx convert block. Indices are duplicated
+# as literals in skin/default/skin.xml (a skin <convert> eval has no access to these
+# module constants) - keep both in sync when changing this layout.
+ROW_IDX_NAME = 20
+ROW_IDX_DATE_TEXT = 21
+ROW_IDX_PROGRESS = 22
+ROW_IDX_FILE_ICON = 23
+ROW_IDX_PICON = 24
+ROW_IDX_COLOR = 25
+ROW_IDX_COLOR_SEL = 26
+
+
+class MovieList(List, Sorting, ServiceCenter):
 
     COMPONENT_ID = ""
-    GUI_WIDGET = eListbox
 
     def __init__(self):
         logger.debug("...")
-        GUIComponent.__init__(self)
+        List.__init__(self, list=[], enableWrapAround=True)
         Sorting.__init__(self)
         ServiceCenter.__init__(self, self)
         self.file_list = []
@@ -46,11 +55,6 @@ class MovieList(GUIComponent, Sorting, ServiceCenter):
         self.lock_list = {}
         self.file_list_index = {}
         self.load_dir = ""
-        self.skinAttributes = None
-
-        # Initialize the list
-        self.l = eListboxPythonMultiContent()  # noqa: E741
-        self.l.setBuildFunc(self.buildMovieListEntry)
 
         self.show_dirs = False
         self.insert_dirs = False
@@ -91,16 +95,6 @@ class MovieList(GUIComponent, Sorting, ServiceCenter):
         self.pic_movie_deleted = LoadPixmap(getSkinPath(
             "images/deleted.svg"), cached=True)
 
-        self.onSelectionChanged = []
-
-    def postWidgetCreate(self, instance):
-        instance.setWrapAround(True)
-        instance.setContent(self.l)
-        instance.selectionChanged.get().append(self.selectionChanged)
-
-    def preWidgetRemove(self, instance):
-        instance.setContent(None)
-
     def setListContent(self):
         config.plugins.moviecockpit.list_content.value = self.list_content
         config.plugins.moviecockpit.list_content.save()
@@ -134,35 +128,38 @@ class MovieList(GUIComponent, Sorting, ServiceCenter):
         self.setListContent()
         self.loadList()
 
-    def selectionChanged(self):
-        logger.debug("...")
-        for function in self.onSelectionChanged:
-            function()
-
     # move functions
 
     def moveUp(self, n=1):
         for _i in range(int(n)):
-            self.instance.moveSelection(self.instance.moveUp)
+            self.up()
 
     def moveDown(self, n=1):
         for _i in range(int(n)):
-            self.instance.moveSelection(self.instance.moveDown)
+            self.down()
 
     def pageUp(self):
-        self.instance.moveSelection(self.instance.pageUp)
+        try:
+            instance = self.master.master.instance
+            instance.moveSelection(instance.pageUp)
+        except AttributeError:
+            pass
 
     def pageDown(self):
-        self.instance.moveSelection(self.instance.pageDown)
+        try:
+            instance = self.master.master.instance
+            instance.moveSelection(instance.pageDown)
+        except AttributeError:
+            pass
 
     def moveTop(self):
-        self.instance.moveSelection(self.instance.moveTop)
+        self.top()
 
     def moveEnd(self):
-        self.instance.moveSelection(self.instance.moveEnd)
+        self.bottom()
 
     def moveToIndex(self, index):
-        self.instance.moveSelectionTo(index)
+        self.index = index
 
     def moveToPath(self, path):
         index = self.getFileIndex(path)
@@ -249,14 +246,14 @@ class MovieList(GUIComponent, Sorting, ServiceCenter):
 
     def getCurrentPath(self):
         path = ""
-        current_selection = self.l.getCurrentSelection()
+        current_selection = self.getCurrentSelection()
         if current_selection:
             path = current_selection[FILE_IDX_PATH]
         return path
 
     def getCurrentDir(self):
         directory = ""
-        current_selection = self.l.getCurrentSelection()
+        current_selection = self.getCurrentSelection()
         if current_selection:
             directory = current_selection[FILE_IDX_DIR]
         logger.debug("directory: %s", directory)
@@ -277,18 +274,21 @@ class MovieList(GUIComponent, Sorting, ServiceCenter):
         return index
 
     def getCurrentIndex(self):
-        return self.instance.getCurrentIndex()
+        return self.getIndex()
 
     def getCurrentSelection(self):
-        return self.l.getCurrentSelection()
+        index = self.getIndex()
+        if index is not None and 0 <= index < len(self.file_list):
+            return self.file_list[index]
+        return None
 
     def invalidateList(self):
         self.lock_list = FileManager.getInstance(ID).getLockList()
-        self.l.invalidate()
+        self.updateList([self.buildRow(afile) for afile in self.file_list])
 
     def invalidateEntry(self, i):
         if i > -1:
-            self.l.invalidateEntry(i)
+            self.modifyEntry(i, self.buildRow(self.file_list[i]))
 
     def filterDirList(self, dir_list):
         logger.info("...")
@@ -382,74 +382,14 @@ class MovieList(GUIComponent, Sorting, ServiceCenter):
         sort_mode, sort_order = sort_modes[current_sort_mode][0]
         self.file_list = header_list + \
             self.sortList(file_list, sort_mode, sort_order)
-        self.l.setList(self.file_list)
+        self.list = [self.buildRow(afile) for afile in self.file_list]
         self.file_list_index = self.createListIndex(load_dir, self.file_list)
         self.moveToInitialSelection(selection_path)
         self.load_dir = load_dir
 
-    # skin functions
-
-    def applySkin(self, desktop, parent):
-        attribs = []
-        value_attributes = [
-            "row_height",
-            "start",
-            "spacer",
-            "date_width",
-        ]
-        size_attributes = [
-            "bar_size",
-            "icon_size",
-            "picon_size"
-        ]
-        font_attributes = [
-            "font0",
-            "font1",
-            "font2"
-        ]
-        color_attributes = [
-        ]
-
-        if self.skinAttributes:
-            for (attrib, value) in self.skinAttributes:
-                if attrib in value_attributes:
-                    setattr(self, attrib, int(value))
-                elif attrib in size_attributes:
-                    setattr(self, attrib, parseSize(value, ((1, 1), (1, 1))))
-                elif attrib in font_attributes:
-                    setattr(self, attrib, parseFont(value, ((1, 1), (1, 1))))
-                elif attrib in color_attributes:
-                    setattr(self, attrib, parseColor(value).argb())
-                else:
-                    attribs.append((attrib, value))
-        self.skinAttributes = attribs
-
-        logger.debug("self.skinAttributes: %s", self.skinAttributes)
-        rc = GUIComponent.applySkin(self, desktop, parent)
-
-        # Get widget width from instance
-        self.width = self.instance.size().width()
-
-        # Load progress bar images
-        self.pic_progress_bar = LoadPixmap(getSkinPath(
-            "images/progcl.svg"), cached=True)
-        self.pic_rec_progress_bar = LoadPixmap(getSkinPath(
-            "images/rec_progcl.svg"), cached=True)
-
-        self.l.setItemHeight(self.row_height)
-
-        # Set fonts if specified in template
-        # self.l.setFont(i, gFont("Regular", size))
-        self.l.setFont(0, self.font0)
-        self.l.setFont(1, self.font1)
-        self.l.setFont(2, self.font2)
-
-        return rc
-
     # list build function
 
-    def buildMovieListEntry(self, *args):
-        afile = args  # args is the tuple containing all file info
+    def buildRow(self, afile):
 
         def getDateText(path, file_type, date):
             logger.debug("path: %s, file_type: %s, date: %s",
@@ -565,13 +505,10 @@ class MovieList(GUIComponent, Sorting, ServiceCenter):
         service_reference = afile[FILE_IDX_SERVICE_REFERENCE]
         cuts = afile[FILE_IDX_CUTS]
 
-        self.lock_list = FileManager.getInstance(ID).getLockList()
-
         is_recording = isRecording(path)
         color, color_sel = getColor(path, file_type, is_recording)
         progress = getProgress(is_recording, path, event_start_time,
                                length, cuts) if file_type in [FILE_TYPE_FILE] else -1
-        progress_bar = self.pic_rec_progress_bar if is_recording else self.pic_progress_bar
 
         # Get picon with error handling
         picon = None
@@ -585,44 +522,8 @@ class MovieList(GUIComponent, Sorting, ServiceCenter):
         date_text = getDateText(path, file_type, event_start_time)
         file_icon = getFileIcon(path, file_type, progress, is_recording)
 
-        res = [afile]
-
-        # Calculate positions for compact single line: icon | picon | name | progress bar | date
-        x_pos = self.start
-
-        # Single line: icon | picon | name | progress bar | date
-
-        # file icon
-        if file_icon:
-            res.append(MultiContentEntryPixmapAlphaBlend(
-                pos=(x_pos, (self.row_height - self.icon_size.height()) // 2),
-                size=(self.icon_size.width(), self.icon_size.height()), png=file_icon, flags=4))  # BT_SCALE = 4
-            x_pos += self.icon_size.width() + self.spacer
-
-        # picon
-        if picon and file_type == FILE_TYPE_FILE:
-            res.append(MultiContentEntryPixmapAlphaBlend(
-                pos=(x_pos, (self.row_height - self.picon_size.height()) // 2),
-                size=(self.picon_size.width(), self.picon_size.height()),
-                png=picon, flags=4))  # BT_SCALE = 4
-            x_pos += self.picon_size.width() + self.spacer
-
-        # name
-        res.append(MultiContentEntryText(
-            pos=(x_pos, 0),
-            size=(self.width - x_pos - self.bar_size.width() - self.date_width - self.spacer * 3, self.row_height),
-            font=1, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=name, color=color, color_sel=color_sel))
-
-        # progress bar - always show for movie files
-        if file_type == FILE_TYPE_FILE and progress_bar:
-            res.append(MultiContentEntryProgress(
-                pos=(self.width - self.bar_size.width() - self.date_width - 2 * self.spacer, (self.row_height - self.bar_size.height()) // 2),
-                size=(self.bar_size.width(), self.bar_size.height()), percent=max(0, progress), borderWidth=1, foreColor=color))
-
-        # date
-        res.append(MultiContentEntryText(
-            pos=(self.width - self.date_width - self.spacer, 0),
-            size=(self.date_width, self.row_height),
-            font=2, flags=RT_HALIGN_RIGHT | RT_VALIGN_CENTER, text=date_text, color=color, color_sel=color_sel))
-
-        return res
+        # progress stays -1 for non-file rows (dirs/links): the C++ listbox
+        # skips painting a MultiContentEntryProgress entirely when the
+        # resolved percent is negative, which is exactly how the bar is
+        # meant to disappear for anything that isn't a movie file.
+        return afile + (name, date_text, progress, file_icon, picon, color, color_sel)

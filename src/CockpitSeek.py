@@ -24,6 +24,24 @@ class CockpitSeek(CockpitSmartSeek, CockpitEvent):
         is_recording = isRecording(self.path) or self.timeshift
         return is_recording
 
+    def getSeek(self):
+        # CockpitPlayer doesn't inherit InfoBarSeek (it has its own action map
+        # and event tracking via CockpitPVRState/CockpitCueSheet), so getSeek()/
+        # doSeek() are reimplemented here rather than pulling in the whole
+        # InfoBarSeek mixin just for these two stateless helpers.
+        service = self.session.nav.getCurrentService()
+        if service is None:
+            return None
+        seek = service.seek()
+        if seek is None or not seek.isCurrentlySeekable():
+            return None
+        return seek
+
+    def doSeek(self, pts):
+        seek = self.getSeek()
+        if seek is not None:
+            seek.seekTo(pts)
+
     def getLength(self):
         length = 0
         if self.service_started:

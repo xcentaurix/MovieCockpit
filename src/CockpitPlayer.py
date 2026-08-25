@@ -93,7 +93,7 @@ class CockpitPlayer(
 
         self.service_started = False
         self.cut_list = []
-        self.resume_point = 0
+        self.mtc_resume_point = 0
 
         self.onShown.append(self.__onShown)
 
@@ -121,10 +121,10 @@ class CockpitPlayer(
         if hasattr(self, "config_plugins_plugin"):
             self.downloadCuesheet()
             if self.config_plugins_plugin.movie_resume_at_last_pos.value:
-                self.resume_point = getCutListLast(self.cut_list)
-                if self.resume_point > 0:
-                    seconds = ptsToSeconds(self.resume_point)
-                    logger.debug("resume_point: %s", seconds)
+                self.mtc_resume_point = getCutListLast(self.cut_list)
+                if self.mtc_resume_point > 0:
+                    seconds = ptsToSeconds(self.mtc_resume_point)
+                    logger.debug("mtc_resume_point: %s", seconds)
                     Notifications.AddNotificationWithCallback(
                         self.__serviceStartedCallback,
                         MessageBox,
@@ -141,9 +141,9 @@ class CockpitPlayer(
 
     def __serviceStartedCallback(self, answer):
         logger.info("answer: %s", answer)
-        if answer and self.resume_point:
-            logger.debug("Seeking to resume_point: %s", self.resume_point)
-            self.doSeek(int(self.resume_point))
+        if answer and self.mtc_resume_point:
+            logger.debug("Seeking to mtc_resume_point: %s", self.mtc_resume_point)
+            self.doSeek(int(self.mtc_resume_point))
         elif self.config_plugins_plugin.movie_start_position.value == "first_mark":
             first_mark = getCutListFirst(self.cut_list, config.recording.margin_before.value * 60)
             if first_mark:

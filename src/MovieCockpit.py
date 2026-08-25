@@ -386,6 +386,7 @@ class MovieCockpit(Screen, HelpableScreen, CockpitContextMenu, Actions, CutList)
         if adir not in MountCockpit.getInstance().getMountedBookmarks(ID):
             touchFile(adir)
             FileManager.getInstance(ID).loadDatabaseFile(adir)
+        self.movie_list.loadList()
 
     def openContextMenu(self):
         self.menu(
