@@ -1,0 +1,17 @@
+screen:
+  name: "BufferingProgressSummary"
+  position: "fill"
+  resolution: "396,240"
+  children:
+    - xmlinc:
+        file: "screenpart_fonts.noymlinc"
+    - ePixmap:
+        pixmap: "/usr/lib/enigma2/python/Plugins/Extensions/%PLUGIN%/skin/images/display_bg.png"
+        position: "0,0"
+        size: "400,240"
+        zPosition: "-1"
+    - widget:
+        name: "lcd_pic"
+        position: "150,70"
+        size: "100,100"
+        transparent: "1"

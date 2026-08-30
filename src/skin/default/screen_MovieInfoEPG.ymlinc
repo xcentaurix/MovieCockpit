@@ -1,0 +1,56 @@
+screen:
+  backgroundColor: "panelBG"
+  flags: "wfNoBorder"
+  name: "MovieInfoEPG"
+  position: "center,center"
+  resolution: "1920,1080"
+  size: "1200,820"
+  transparent: "0"
+  children:
+    - xmlinc:
+        file: "screenpart_TitleBar.ymlinc"
+    - widget:
+        font: "$FR_big"
+        position: "25,60"
+        render: "Label"
+        size: "1150,45"
+        source: "Service"
+        transparent: "1"
+        children:
+          - convert:
+              type: "ServiceTime"
+              text: "Duration"
+          - convert:
+              type: "ClockToText"
+              text: "InMinutes"
+    - widget:
+        font: "$FR_big"
+        position: "25,115"
+        render: "Label"
+        size: "1150,45"
+        source: "Service"
+        transparent: "1"
+        valign: "center"
+        children:
+          - convert:
+              type: "COCEventName"
+              text: "Description"
+    - widget:
+        font: "$FR_medium"
+        foregroundColor: "grey"
+        options: "movetype=swimming, direction=top, startpoint=0, startdelay=4000, wrap=1, always=0, repeat=1, oneshot=1, steptime=100"
+        position: "25,135"
+        render: "COCRunningText"
+        size: "1150,602"
+        size2: "1150,542"
+        source: "Service"
+        transparent: "1"
+        children:
+          - convert:
+              type: "COCEventName"
+              text: "ShortAndExtendedDescription"
+    - xmlinc:
+        file: "screenpart_BottomBar.ymlinc"
+    - xmlinc:
+        file: "screenpart_ButtonBar.ymlinc"
+        position: "0,$screen_height-48"

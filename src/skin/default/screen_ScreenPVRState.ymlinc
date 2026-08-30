@@ -1,0 +1,25 @@
+screen:
+  backgroundColor: "transparent"
+  flags: "wfNoBorder"
+  name: "ScreenPVRState"
+  position: "center,center"
+  resolution: "1920,1080"
+  size: "100,160"
+  zPosition: "1000"
+  children:
+    - xmlinc:
+        file: "screenpart_fonts.noymlinc"
+    - widget:
+        alphatest: "blend"
+        name: "state_pic"
+        position: "0,0"
+        size: "100,100"
+    - widget:
+        backgroundColor: "transparent"
+        font: "$FR_big"
+        halign: "center"
+        name: "state"
+        position: "0,110"
+        size: "100,54"
+        transparent: "1"
+        valign: "center"

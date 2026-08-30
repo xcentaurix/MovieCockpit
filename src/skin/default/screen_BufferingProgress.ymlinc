@@ -1,0 +1,18 @@
+- screen:
+    backgroundColor: "transparent"
+    flags: "wfNoBorder"
+    name: "BufferingProgress"
+    position: "center,center"
+    resolution: "1920,1080"
+    size: "100,100"
+    children:
+      - xmlinc:
+          file: "screenpart_fonts.noymlinc"
+      - widget:
+          alphatest: "off"
+          name: "pic"
+          position: "center,center"
+          size: "100,100"
+          transparent: "0"
+- xmlinc:
+    file: "screen_BufferingProgressSummary.ymlinc"

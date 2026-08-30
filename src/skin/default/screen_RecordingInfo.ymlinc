@@ -1,0 +1,40 @@
+screen:
+  backgroundColor: "panelBG"
+  flags: "wfNoBorder"
+  name: "RecordingInfo"
+  position: "center,center"
+  resolution: "1920,1080"
+  size: "1920,1080"
+  transparent: "0"
+  children:
+    - xmlinc:
+        file: "screenpart_TitleBar.ymlinc"
+    - widget:
+        enableWrapAround: "1"
+        position: "20,100"
+        render: "Listbox"
+        scrollbarMode: "showOnDemand"
+        size: "1880,865"
+        source: "list"
+        transparent: "1"
+        children:
+          - convert:
+              type: "TemplatedMultiContent"
+              cell:
+                itemHeight: 40
+                fonts:
+                  - "Regular;30"
+                fields:
+                  - text:
+                      rect: [5, 0, 360, 40]
+                      flags: RT_VALIGN_CENTER
+                      value: 0
+                  - text:
+                      rect: [420, 0, 1360, 40]
+                      flags: RT_VALIGN_CENTER
+                      value: 1
+    - xmlinc:
+        file: "screenpart_BottomBar.ymlinc"
+    - xmlinc:
+        file: "screenpart_ButtonBar.ymlinc"
+        position: "0,$screen_height-48"
