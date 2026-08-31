@@ -8,7 +8,7 @@ screen:
   zPosition: "1000"
   children:
     - xmlinc:
-        file: "screenpart_fonts.noymlinc"
+        file: "screenpart_fonts.ymlinc"
     - widget:
         alphatest: "blend"
         name: "state_pic"

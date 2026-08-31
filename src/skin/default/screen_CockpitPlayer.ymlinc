@@ -8,7 +8,7 @@ screen:
   title: "CockpitPlayer"
   children:
     - xmlinc:
-        file: "screenpart_fonts.noymlinc"
+        file: "screenpart_fonts.ymlinc"
     - widget:
         backgroundColor: "secondBG"
         borderColor: "black"
@@ -162,7 +162,7 @@ screen:
               type: "ConditionalShowHide"
     - widget:
         alphatest: "on"
-        pixmap: "/usr/lib/enigma2/python/Plugins/Extensions/%PLUGIN%/skin/default/images/ico_format_hd.png"
+        pixmap: "~/images/ico_format_hd.png"
         position: "1518,107"
         render: "Pixmap"
         size: "60,32"
@@ -176,7 +176,7 @@ screen:
               type: "ConditionalShowHide"
     - widget:
         alphatest: "on"
-        pixmap: "/usr/lib/enigma2/python/Plugins/Extensions/%PLUGIN%/skin/default/images/ico_format_16_9.png"
+        pixmap: "~/images/ico_format_16_9.png"
         position: "1518,107"
         render: "Pixmap"
         size: "60,32"
@@ -190,7 +190,7 @@ screen:
               type: "ConditionalShowHide"
     - widget:
         alphatest: "on"
-        pixmap: "/usr/lib/enigma2/python/Plugins/Extensions/%PLUGIN%/skin/default/images/ico_format_4_3.png"
+        pixmap: "~/images/ico_format_4_3.png"
         position: "1518,107"
         render: "Pixmap"
         size: "60,32"

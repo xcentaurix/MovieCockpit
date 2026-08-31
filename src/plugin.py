@@ -58,7 +58,8 @@ def Plugins(**__):
             # patches the same hook at weight 0), so PVR/Video always opens
             # MovieCockpit regardless of Plugins/Extensions scan order.
             weight=1,
-            fnc=autoStart
+            fnc=autoStart,
+            needsRestart=True
         ),
         PluginDescriptor(
             name="MovieCockpit",
@@ -67,7 +68,8 @@ def Plugins(**__):
             where=[
                 PluginDescriptor.WHERE_PLUGINMENU,
             ],
-            fnc=openMovieCockpit
+            fnc=openMovieCockpit,
+            needsRestart=True
         )
     ]
     return descriptors

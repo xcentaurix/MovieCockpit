@@ -4,9 +4,9 @@ screen:
   resolution: "396,240"
   children:
     - xmlinc:
-        file: "screenpart_fonts.noymlinc"
+        file: "screenpart_fonts.ymlinc"
     - ePixmap:
-        pixmap: "/usr/lib/enigma2/python/Plugins/Extensions/%PLUGIN%/skin/images/display_bg.png"
+        pixmap: "~/../images/display_bg.png"
         position: "0,0"
         size: "400,240"
         zPosition: "-1"
