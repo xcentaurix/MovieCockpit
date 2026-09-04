@@ -7,6 +7,7 @@ from Plugins.Plugin import PluginDescriptor
 from Plugins.SystemPlugins.MountCockpit.MountCockpit import MountCockpit
 from Screens.InfoBar import InfoBar
 from Tools.BoundFunction import boundFunction
+from skin import findSkinScreen
 from .__init__ import _
 from .Debug import logger
 from .SkinUtils import loadPluginSkin
@@ -15,7 +16,8 @@ from .SetupScreen import SetupScreen
 from .MovieCockpit import MovieCockpit
 from . import ConfigInit  # noqa: F401, pylint: disable=unused-import
 
-loadPluginSkin()
+if findSkinScreen("MovieCockpit") is None:
+    loadPluginSkin()
 
 
 def openMovieCockpit(session, **__):
@@ -70,6 +72,10 @@ def Plugins(**__):
             ],
             fnc=openMovieCockpit,
             needsRestart=True
-        )
+        ),
+        PluginDescriptor(
+            where=PluginDescriptor.WHERE_SKINCHANGE,
+            fnc=loadPluginSkin
+        ),
     ]
     return descriptors

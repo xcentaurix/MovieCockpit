@@ -12,6 +12,7 @@
 		<color name="secondBG" value="#202020"/>
 		<color name="sliderBG" value="#303030"/>
 	</colors>
+	<scrollbarstyle backgroundColor="black" borderColor="white" borderWidth="1" foregroundColor="white" mode="showOnDemand" width="10"/>
 	<screen backgroundColor="panelBG" flags="wfNoBorder" name="MovieCockpit" position="center,center" resolution="1920,1080" size="1920,1080" transparent="0">
 		<eLabel backgroundColor="barBG" position="0,0" size="e,55"/>
 		<widget font="Bold;38" position="10,0" render="Label" size="e-20,55" source="Title" transparent="1" valign="center" zPosition="1"/>
@@ -30,7 +31,9 @@
 					MultiContentEntryPixmapAlphaBlend(pos=(0,5), size=(35,35), png=23, flags=BT_SCALE),
 					MultiContentEntryPixmapAlphaBlend(pos=(50,5), size=(55,35), png=24, flags=BT_SCALE),
 					MultiContentEntryText(pos=(120,0), size=(e-485,45), font=1, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER, text=20, color=MultiContentTemplateColor(25), color_sel=MultiContentTemplateColor(26)),
-					MultiContentEntryProgress(pos=(e-350,15), size=(90,14), percent=-22, borderWidth=1, foreColor="#bababa", foreColorSelected="#bababa", backColor="progressBG"),
+					MultiContentEntryProgress(pos=(e-350,15), size=(90,14), percent=-22, borderWidth=1, foreColor="#bababa", foreColorSelected="#ffffff", backColor="progressBG"),
+					MultiContentEntryProgress(pos=(e-350,15), size=(90,14), percent=-27, borderWidth=1, foreColor="#ff1616", foreColorSelected="#ff3838", backColor="progressBG"),
+					MultiContentEntryProgress(pos=(e-350,15), size=(90,14), percent=-28, borderWidth=1, foreColor="#cccc00", foreColorSelected="#ffff00", backColor="progressBG"),
 					MultiContentEntryText(pos=(e-245,0), size=(230,45), font=2, flags=RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text=21, color=MultiContentTemplateColor(25), color_sel=MultiContentTemplateColor(26)),
 				],
 				"fonts": [gFont("Regular",32), gFont("Regular",30), gFont("Regular",28)],
@@ -55,8 +58,8 @@
 		<eLabel backgroundColor="barBG" position="0,1025" size="1920,55" zPosition="0"/>
 		<eLabel backgroundColor="separator" position="0,1025" size="1920,2" zPosition="1"/>
 		<widget font="Regular;32" foregroundColor="grey" halign="center" name="level" position="0,1025" size="96,55" transparent="1" valign="center" zPosition="2"/>
-		<eLabel backgroundColor="separator" position="0,e-56" size="e,2"/>
-		<eLabel backgroundColor="barBG" position="0,e-55" size="e,55"/>
+		<eLabel backgroundColor="separator" position="0,1024" size="1920,2"/>
+		<eLabel backgroundColor="barBG" position="0,1025" size="1920,55"/>
 		<widget conditional="key_red" font="Regular;32" foregroundColor="keyRed" halign="center" name="key_red" position="0,1032" size="435,38" transparent="1" valign="center" zPosition="2"/>
 		<widget conditional="key_green" font="Regular;32" foregroundColor="keyGreen" halign="center" name="key_green" position="435,1032" size="435,38" transparent="1" valign="center" zPosition="2"/>
 		<widget conditional="key_yellow" font="Regular;32" foregroundColor="keyYellow" halign="center" name="key_yellow" position="870,1032" size="435,38" transparent="1" valign="center" zPosition="2"/>
@@ -64,7 +67,7 @@
 		<widget conditional="key_menu" font="Regular;32" foregroundColor="white" halign="center" name="key_menu" position="1740,1032" size="90,38" transparent="1" valign="center" zPosition="2"/>
 		<widget conditional="key_info" font="Regular;32" foregroundColor="white" halign="center" name="key_info" position="1830,1032" size="90,38" transparent="1" valign="center" zPosition="2"/>
 	</screen>
-	<screen name="MovieCockpitSummary" position="fill" resolution="396,240">
+	<screen backgroundColor="panelBG" flags="wfNoBorder" name="MovieCockpitSummary" position="fill" resolution="396,240">
 		<ePixmap alphatest="on" pixmap="~/../images/display_bg.png" position="0,0" size="e,e" zPosition="-10"/>
 		<widget font="FdLcD;36" halign="center" position="0,0" render="Label" size="e-3,e-80" source="parent.Service" transparent="1" valign="center" zPosition="2">
 			<convert type="ServiceName">Name</convert>
@@ -91,8 +94,8 @@
 		<widget font="Regular;32" foregroundColor="grey" options="movetype=swimming, direction=top, startpoint=0, startdelay=4000, wrap=1, always=0, repeat=1, oneshot=1, steptime=100" position="25,135" render="COCRunningText" size="1150,602" size2="1150,542" source="Service" transparent="1">
 			<convert type="COCEventName">ShortAndExtendedDescription</convert>
 		</widget>
-		<eLabel backgroundColor="separator" position="0,e-56" size="e,2"/>
-		<eLabel backgroundColor="barBG" position="0,e-55" size="e,55"/>
+		<eLabel backgroundColor="separator" position="0,764" size="1200,2"/>
+		<eLabel backgroundColor="barBG" position="0,765" size="1200,55"/>
 		<widget conditional="key_red" font="Regular;32" foregroundColor="keyRed" halign="center" name="key_red" position="0,772" size="255,38" transparent="1" valign="center" zPosition="2"/>
 		<widget conditional="key_green" font="Regular;32" foregroundColor="keyGreen" halign="center" name="key_green" position="255,772" size="255,38" transparent="1" valign="center" zPosition="2"/>
 		<widget conditional="key_yellow" font="Regular;32" foregroundColor="keyYellow" halign="center" name="key_yellow" position="510,772" size="255,38" transparent="1" valign="center" zPosition="2"/>
@@ -116,8 +119,8 @@
 			}
 			</convert>
 		</widget>
-		<eLabel backgroundColor="separator" position="0,e-56" size="e,2"/>
-		<eLabel backgroundColor="barBG" position="0,e-55" size="e,55"/>
+		<eLabel backgroundColor="separator" position="0,1024" size="1920,2"/>
+		<eLabel backgroundColor="barBG" position="0,1025" size="1920,55"/>
 		<widget conditional="key_red" font="Regular;32" foregroundColor="keyRed" halign="center" name="key_red" position="0,1032" size="435,38" transparent="1" valign="center" zPosition="2"/>
 		<widget conditional="key_green" font="Regular;32" foregroundColor="keyGreen" halign="center" name="key_green" position="435,1032" size="435,38" transparent="1" valign="center" zPosition="2"/>
 		<widget conditional="key_yellow" font="Regular;32" foregroundColor="keyYellow" halign="center" name="key_yellow" position="870,1032" size="435,38" transparent="1" valign="center" zPosition="2"/>
@@ -136,8 +139,8 @@
 		<widget font="Regular;32" halign="left" position="20,301" render="Label" size="1160,35" source="DiskSpace" transparent="1">
 			<convert type="COCDiskSpaceInfo">SpaceInfo</convert>
 		</widget>
-		<eLabel backgroundColor="separator" position="0,e-56" size="e,2"/>
-		<eLabel backgroundColor="barBG" position="0,e-55" size="e,55"/>
+		<eLabel backgroundColor="separator" position="0,354" size="1200,2"/>
+		<eLabel backgroundColor="barBG" position="0,355" size="1200,55"/>
 		<widget conditional="key_red" font="Regular;32" foregroundColor="keyRed" halign="center" name="key_red" position="0,362" size="255,38" transparent="1" valign="center" zPosition="2"/>
 		<widget conditional="key_green" font="Regular;32" foregroundColor="keyGreen" halign="center" name="key_green" position="255,362" size="255,38" transparent="1" valign="center" zPosition="2"/>
 		<widget conditional="key_yellow" font="Regular;32" foregroundColor="keyYellow" halign="center" name="key_yellow" position="510,362" size="255,38" transparent="1" valign="center" zPosition="2"/>
@@ -165,7 +168,7 @@
 		<widget backgroundColor="secondBG" borderColor="black" borderWidth="2" font="Regular;32" foregroundColor="white" halign="right" position="1402,46" render="Label" size="175,37" source="Service" valign="center" zPosition="4">
 			<convert type="COCServicePosition">Remaining</convert>
 		</widget>
-		<widget alphatest="on" pixmap="buttons/rec.png" position="1590,79" render="Pixmap" size="30,30" source="session.RecordState" zPosition="3">
+		<widget alphatest="on" pixmap="~/../images/rec.png" position="1590,79" render="Pixmap" size="30,30" source="session.RecordState" zPosition="3">
 			<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget backgroundColor="secondBG" borderWidth="2" font="Regular;32" foregroundColor="white" halign="right" noWrap="1" position="1428,4" render="Label" size="150,37" source="Service" valign="center" zPosition="1">
@@ -174,7 +177,7 @@
 		<widget font="Bold;26" foregroundColor="white" halign="center" position="c-109,105" render="Label" size="219,31" source="Service" transparent="1" valign="center">
 			<convert type="COCServicePosition">Length</convert>
 		</widget>
-		<widget alphatest="on" pixmap="infobar/ico_dolby_on.png" position="1467,107" render="Pixmap" size="50,32" source="Service" zPosition="2">
+		<widget alphatest="on" pixmap="~/../images/ico_dolby_on.png" position="1467,107" render="Pixmap" size="50,32" source="Service" zPosition="2">
 			<convert type="ServiceInfo">IsMultichannel</convert>
 			<convert type="ConditionalShowHide"/>
 		</widget>
@@ -191,7 +194,7 @@
 			<convert type="ConditionalShowHide"/>
 		</widget>
 	</screen>
-	<screen name="CockpitPlayerSummary" position="fill" resolution="396,240">
+	<screen backgroundColor="panelBG" flags="wfNoBorder" name="CockpitPlayerSummary" position="fill" resolution="396,240">
 		<ePixmap alphatest="on" pixmap="~/../images/display_bg.png" position="0,0" size="e,e" zPosition="-10"/>
 		<widget font="FdLcD;50" halign="center" position="0,0" render="Label" size="395,125" source="parent.Service" transparent="1" valign="center">
 			<convert type="COCEventName">Name</convert>
@@ -219,7 +222,7 @@
 	<screen backgroundColor="transparent" flags="wfNoBorder" name="BufferingProgress" position="center,center" resolution="1920,1080" size="100,100">
 		<widget alphatest="off" name="pic" position="center,center" size="100,100" transparent="0"/>
 	</screen>
-	<screen name="BufferingProgressSummary" position="fill" resolution="396,240">
+	<screen backgroundColor="panelBG" flags="wfNoBorder" name="BufferingProgressSummary" position="fill" resolution="396,240">
 		<ePixmap pixmap="~/../images/display_bg.png" position="0,0" size="400,240" zPosition="-1"/>
 		<widget name="lcd_pic" position="150,70" size="100,100" transparent="1"/>
 	</screen>

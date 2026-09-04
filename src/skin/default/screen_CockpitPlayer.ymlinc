@@ -1,9 +1,7 @@
 screen:
-  backgroundColor: "secondBG"
-  flags: "wfNoBorder"
   name: "CockpitPlayer"
+  backgroundColor: "secondBG"
   position: "150,900"
-  resolution: "1920,1080"
   size: "1620,150"
   title: "CockpitPlayer"
   children:
@@ -106,7 +104,7 @@ screen:
               text: "Remaining"
     - widget:
         alphatest: "on"
-        pixmap: "buttons/rec.png"
+        pixmap: "~/../images/rec.png"
         position: "1590,79"
         render: "Pixmap"
         size: "30,30"
@@ -148,7 +146,7 @@ screen:
               text: "Length"
     - widget:
         alphatest: "on"
-        pixmap: "infobar/ico_dolby_on.png"
+        pixmap: "~/../images/ico_dolby_on.png"
         position: "1467,107"
         render: "Pixmap"
         size: "50,32"

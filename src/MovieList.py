@@ -34,11 +34,13 @@ from .JobUtils import getPendingJob
 # module constants) - keep both in sync when changing this layout.
 ROW_IDX_NAME = 20
 ROW_IDX_DATE_TEXT = 21
-ROW_IDX_PROGRESS = 22
+ROW_IDX_PROGRESS = 22  # normal-category bar only - see splitProgressByCategory()
 ROW_IDX_FILE_ICON = 23
 ROW_IDX_PICON = 24
 ROW_IDX_COLOR = 25
 ROW_IDX_COLOR_SEL = 26
+ROW_IDX_PROGRESS_RECORDING = 27
+ROW_IDX_PROGRESS_MARKED = 28
 
 
 class MovieList(List, Sorting, ServiceCenter):
@@ -497,6 +499,24 @@ class MovieList(List, Sorting, ServiceCenter):
                 color_sel = self.recording_color_sel
             return color, color_sel
 
+        def splitProgressByCategory(path, is_recording, progress):
+            """The progress bar's fore color, unlike text color, can't be bound
+            per-row from the data tuple - eListboxPythonMultiContent's C++ side
+            never resolves a "template color" sentinel for TYPE_PROGRESS - so a
+            single bar can't recolor itself per category the way the title text
+            does via getColor() above. Instead three statically-colored bars
+            share the same position in the skin; only the one matching this
+            row's category (same normal/recording/marked priority as getColor())
+            gets a real percent, the other two stay -1 and are skipped entirely."""
+            progress_normal = progress_recording = progress_marked = -1
+            if path in self.selection_list or path in self.lock_list:
+                progress_marked = progress
+            elif is_recording:
+                progress_recording = progress
+            else:
+                progress_normal = progress
+            return progress_normal, progress_recording, progress_marked
+
         path = afile[FILE_IDX_PATH]
         file_type = afile[FILE_IDX_TYPE]
         event_start_time = afile[FILE_IDX_EVENT_START_TIME]
@@ -509,6 +529,8 @@ class MovieList(List, Sorting, ServiceCenter):
         color, color_sel = getColor(path, file_type, is_recording)
         progress = getProgress(is_recording, path, event_start_time,
                                length, cuts) if file_type in [FILE_TYPE_FILE] else -1
+        progress_normal, progress_recording, progress_marked = splitProgressByCategory(
+            path, is_recording, progress)
 
         # Get picon with error handling
         picon = None
@@ -525,5 +547,8 @@ class MovieList(List, Sorting, ServiceCenter):
         # progress stays -1 for non-file rows (dirs/links): the C++ listbox
         # skips painting a MultiContentEntryProgress entirely when the
         # resolved percent is negative, which is exactly how the bar is
-        # meant to disappear for anything that isn't a movie file.
-        return afile + (name, date_text, progress, file_icon, picon, color, color_sel)
+        # meant to disappear for anything that isn't a movie file - the same
+        # mechanism is what makes only one of the three per-category bars
+        # below (see splitProgressByCategory()) ever actually paint.
+        return afile + (name, date_text, progress_normal, file_icon, picon, color, color_sel,
+                        progress_recording, progress_marked)

@@ -1,9 +1,6 @@
 screen:
-  backgroundColor: "panelBG"
-  flags: "wfNoBorder"
   name: "RecordingInfo"
   position: "center,center"
-  resolution: "1920,1080"
   size: "1920,1080"
   transparent: "0"
   children:
@@ -26,15 +23,14 @@ screen:
                   - "Regular;30"
                 fields:
                   - text:
-                      rect: [5, 0, 360, 40]
+                      position: "5,0"
+                      size: "360,40"
                       flags: RT_VALIGN_CENTER
                       value: 0
                   - text:
-                      rect: [420, 0, 1360, 40]
+                      position: "420,0"
+                      size: "1360,40"
                       flags: RT_VALIGN_CENTER
                       value: 1
     - xmlinc:
-        file: "screenpart_BottomBar.ymlinc"
-    - xmlinc:
-        file: "screenpart_ButtonBar.ymlinc"
-        position: "0,$screen_height-48"
+        file: "screenpart_Footer.ymlinc"

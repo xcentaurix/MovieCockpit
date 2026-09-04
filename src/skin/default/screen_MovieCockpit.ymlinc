@@ -1,9 +1,6 @@
 screen:
-  backgroundColor: "panelBG"
-  flags: "wfNoBorder"
   name: "MovieCockpit"
   position: "center,center"
-  resolution: "1920,1080"
   size: "1920,1080"
   transparent: "0"
   children:
@@ -73,29 +70,53 @@ screen:
                   - "Regular;28"
                 fields:
                   - icon:
-                      rect: [0, 5, 35, 35]
+                      position: "0,5"
+                      size: "35,35"
                       flags: BT_SCALE
                       value: 23
                   - icon:
-                      rect: [50, 5, 55, 35]
+                      position: "50,5"
+                      size: "55,35"
                       flags: BT_SCALE
                       value: 24
                   - text:
-                      rect: [120, 0, e-485, 45]
+                      position: "120,0"
+                      size: "e-485,45"
                       font: "Regular;30"
                       flags: RT_HALIGN_LEFT|RT_VALIGN_CENTER
                       value: 20
                       color: {call: MultiContentTemplateColor, args: [25]}
                       color_sel: {call: MultiContentTemplateColor, args: [26]}
                   - progress:
-                      rect: [e-350, 15, 90, 14]
+                      position: "e-350,15"
+                      size: "90,14"
                       value: -22
                       borderWidth: 1
                       foreColor: "#bababa"
-                      foreColorSelected: "#bababa"
+                      foreColorSelected: "#ffffff"
                       backColor: "progressBG"
+                      backColorSelected: "progressBG"
+                  - progress:
+                      position: "e-350,15"
+                      size: "90,14"
+                      value: -27
+                      borderWidth: 1
+                      foreColor: "#ff1616"
+                      foreColorSelected: "#ff3838"
+                      backColor: "progressBG"
+                      backColorSelected: "progressBG"
+                  - progress:
+                      position: "e-350,15"
+                      size: "90,14"
+                      value: -28
+                      borderWidth: 1
+                      foreColor: "#cccc00"
+                      foreColorSelected: "#ffff00"
+                      backColor: "progressBG"
+                      backColorSelected: "progressBG"
                   - text:
-                      rect: [e-245, 0, 230, 45]
+                      position: "e-245,0"
+                      size: "230,45"
                       font: "Regular;28"
                       flags: RT_HALIGN_RIGHT|RT_VALIGN_CENTER
                       value: 21
@@ -184,7 +205,4 @@ screen:
         valign: "center"
         zPosition: "2"
     - xmlinc:
-        file: "screenpart_BottomBar.ymlinc"
-    - xmlinc:
-        file: "screenpart_ButtonBar.ymlinc"
-        position: "0,$screen_height-48"
+        file: "screenpart_Footer.ymlinc"

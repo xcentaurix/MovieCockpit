@@ -1,9 +1,6 @@
 screen:
-  backgroundColor: "panelBG"
-  flags: "wfNoBorder"
   name: "MovieInfoEPG"
   position: "center,center"
-  resolution: "1920,1080"
   size: "1200,820"
   transparent: "0"
   children:
@@ -50,7 +47,4 @@ screen:
               type: "COCEventName"
               text: "ShortAndExtendedDescription"
     - xmlinc:
-        file: "screenpart_BottomBar.ymlinc"
-    - xmlinc:
-        file: "screenpart_ButtonBar.ymlinc"
-        position: "0,$screen_height-48"
+        file: "screenpart_Footer.ymlinc"

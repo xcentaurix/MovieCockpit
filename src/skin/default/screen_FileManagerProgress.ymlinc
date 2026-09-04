@@ -1,9 +1,6 @@
 screen:
-  backgroundColor: "panelBG"
-  flags: "wfNoBorder"
   name: "FileManagerProgress"
   position: "center,center"
-  resolution: "1920,1080"
   size: "1200,410"
   children:
     - xmlinc:
@@ -49,7 +46,4 @@ screen:
               type: "COCDiskSpaceInfo"
               text: "SpaceInfo"
     - xmlinc:
-        file: "screenpart_BottomBar.ymlinc"
-    - xmlinc:
-        file: "screenpart_ButtonBar.ymlinc"
-        position: "0,$screen_height-48"
+        file: "screenpart_Footer.ymlinc"
