@@ -4,24 +4,20 @@
 
 from pathlib import Path
 from Tools.Directories import SCOPE_SKIN
-from skin import loadSkin
+from skin import loadSkin, findSkinScreen
 from .ScreenSummaryFix import patchScreenApplySkin
 # from .Debug import logger
 
 
 def getSkinPath(file_name):
     # logger.info("file_name: %s", file_name)
-    skin_path = Path(__file__).parent / "skin" / "default" / file_name
+    skin_path = Path(__file__).parent / "skin" / file_name
     return str(skin_path)
 
 
-def loadPluginSkin(file_name="skin.xml", session=None):
-    # session= is accepted (and unused) only because Enigma2's own
-    # WHERE_SKINCHANGE dispatch always calls plugin callbacks as
-    # fnc(session=...) - see skin.py's _notifySkinPlugins(). Without it,
-    # loadPluginSkin() crashes on every skin reload for any plugin that
-    # registers it that way (TypeError: unexpected keyword argument
-    # 'session'), even though the initial-boot call site never passes one.
-    skin_file = getSkinPath(file_name)
+def loadPluginSkin(screen_name=None, file_name="skin.xml", session=None):  # pylint: disable=unused-argument
+    if screen_name is not None and findSkinScreen(screen_name) is not None:
+        return
+    skin_file = str(Path(__file__).parent / "skin" / "default" / file_name)
     loadSkin(skin_file, scope=SCOPE_SKIN)
     patchScreenApplySkin()
