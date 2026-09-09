@@ -4,8 +4,6 @@ screen:
   size: "1200,410"
   children:
     - xmlinc:
-        file: "screenpart_fonts.ymlinc"
-    - xmlinc:
         file: "screenpart_TitleBar.ymlinc"
     - widget:
         font: "$FR_medium"

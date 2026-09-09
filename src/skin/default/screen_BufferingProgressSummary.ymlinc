@@ -3,8 +3,6 @@ screen:
   position: "fill"
   resolution: "396,240"
   children:
-    - xmlinc:
-        file: "screenpart_fonts.ymlinc"
     - ePixmap:
         pixmap: "~/../images/display_bg.png"
         position: "0,0"

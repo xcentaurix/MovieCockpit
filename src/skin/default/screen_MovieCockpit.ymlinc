@@ -8,7 +8,7 @@ screen:
         file: "screenpart_TitleBar.ymlinc"
     - ePixmap:
         alphatest: "blend"
-        backgroundColor: "#00000000"
+        backgroundColor: "black"
         pixmap: "~/../images/sort.svg"
         position: "38,80"
         scale: "scale"
@@ -24,7 +24,7 @@ screen:
         valign: "center"
     - ePixmap:
         alphatest: "blend"
-        backgroundColor: "#00000000"
+        backgroundColor: "black"
         pixmap: "~/../images/hardisk.svg"
         position: "563,80"
         scale: "scale"
@@ -50,7 +50,7 @@ screen:
         size: "100,100"
         zPosition: "3"
     - widget:
-        backgroundColorSelected: "keyBlue"
+        backgroundColorSelected: "blue"
         enableWrapAround: "1"
         position: "30,135"
         render: "Listbox"
@@ -92,28 +92,28 @@ screen:
                       size: "90,14"
                       value: -22
                       borderWidth: 1
-                      foreColor: "#bababa"
-                      foreColorSelected: "#ffffff"
-                      backColor: "progressBG"
-                      backColorSelected: "progressBG"
+                      foreColor: "gray"
+                      foreColorSelected: "white"
+                      backColor: "backgroundLight"
+                      backColorSelected: "backgroundLight"
                   - progress:
                       position: "e-350,15"
                       size: "90,14"
                       value: -27
                       borderWidth: 1
-                      foreColor: "#ff1616"
-                      foreColorSelected: "#ff3838"
-                      backColor: "progressBG"
-                      backColorSelected: "progressBG"
+                      foreColor: "red"
+                      foreColorSelected: "red"
+                      backColor: "backgroundLight"
+                      backColorSelected: "backgroundLight"
                   - progress:
                       position: "e-350,15"
                       size: "90,14"
                       value: -28
                       borderWidth: 1
-                      foreColor: "#cccc00"
-                      foreColorSelected: "#ffff00"
-                      backColor: "progressBG"
-                      backColorSelected: "progressBG"
+                      foreColor: "yellow"
+                      foreColorSelected: "yellow"
+                      backColor: "backgroundLight"
+                      backColorSelected: "backgroundLight"
                   - text:
                       position: "e-245,0"
                       size: "230,45"
@@ -124,7 +124,7 @@ screen:
                       color_sel: {call: MultiContentTemplateColor, args: [26]}
     - widget:
         alphatest: "blend"
-        backgroundColor: "secondBG"
+        backgroundColor: "backgroundMedium"
         position: "1260,135"
         render: "COCCover"
         size: "630,375"
@@ -144,8 +144,8 @@ screen:
               type: "COCEventName"
               text: "Name"
     - widget:
-        font: "$FB_small"
-        position: "1270,585"
+        font: "$FB_medium"
+        position: "1270,590"
         render: "Label"
         size: "280,34"
         source: "Service"
@@ -185,7 +185,7 @@ screen:
               type: "COCEventName"
               text: "ShortAndExtendedDescription"
     - eLabel:
-        backgroundColor: "barBG"
+        backgroundColor: "backgroundDark"
         position: "0,1025"
         size: "1920,55"
         zPosition: "0"

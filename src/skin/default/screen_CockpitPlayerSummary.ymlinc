@@ -7,7 +7,7 @@ screen:
         alphatest: "on"
         pixmap: "~/../images/display_bg.png"
         position: "0,0"
-        size: "e,e"
+        size: "$screen_width,$screen_height"
         zPosition: "-10"
     - widget:
         font: "FdLcD;50"

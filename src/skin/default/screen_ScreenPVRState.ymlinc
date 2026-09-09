@@ -5,8 +5,6 @@ screen:
   size: "100,160"
   zPosition: "1000"
   children:
-    - xmlinc:
-        file: "screenpart_fonts.ymlinc"
     - widget:
         alphatest: "blend"
         name: "state_pic"

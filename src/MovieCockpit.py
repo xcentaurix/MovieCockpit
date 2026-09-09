@@ -100,6 +100,8 @@ class MovieCockpit(Screen, HelpableScreen, CockpitContextMenu, Actions, CutList)
         self.last_service = None
         self.delay_timer = eTimer()
         self.delay_timer.callback.append(self.updateInfoDelayed)
+        self.reload_list_timer = eTimer()
+        self.reload_list_timer.callback.append(self.reloadMovieList)
 
         self.tmdb_plugin = getPlugin(WHERE_TMDB_MOVIELIST)
         self.mediathek_plugin = getPlugin(WHERE_MEDIATHEK_SEARCH)
@@ -152,6 +154,7 @@ class MovieCockpit(Screen, HelpableScreen, CockpitContextMenu, Actions, CutList)
     def exit(self, reload_moviecockpit=False):
         logger.info("reload_moviecockpit: %s", reload_moviecockpit)
         self.delay_timer.stop()
+        self.reload_list_timer.stop()
         self.close(self.session, reload_moviecockpit)
 
     def goUp(self):
@@ -677,7 +680,16 @@ class MovieCockpit(Screen, HelpableScreen, CockpitContextMenu, Actions, CutList)
         if self.movie_list is None:
             logger.debug("screen already closed, skipping callback")
             return
-        self.movie_list.loadList(self.movie_list.load_dir, self.return_path)
+        # execFileOps() fires this callback once per file, and loadList()
+        # rebuilds date/progress/picon for the *entire* current folder - for
+        # a multi-file operation that means one full, synchronous rebuild
+        # per file instead of once for the whole batch, which can block the
+        # main thread for seconds on a large folder (observed triggering
+        # Enigma2's own "main thread busy" spinner). Debounce it: reset a
+        # short one-shot timer on every callback, so the actual reload only
+        # runs once no further callback has arrived within the window.
+        self.reload_list_timer.stop()
+        self.reload_list_timer.start(500, True)
         if error == FILE_OP_ERROR_NO_DISKSPACE:
             self.session.open(
                 MessageBox,
@@ -685,6 +697,12 @@ class MovieCockpit(Screen, HelpableScreen, CockpitContextMenu, Actions, CutList)
                 MessageBox.TYPE_ERROR,
                 10
             )
+
+    def reloadMovieList(self):
+        if self.movie_list is None:
+            logger.debug("screen already closed, skipping reload")
+            return
+        self.movie_list.loadList(self.movie_list.load_dir, self.return_path)
 
     def showFileManagerProgress(self):
         self.session.open(FileManagerProgress)

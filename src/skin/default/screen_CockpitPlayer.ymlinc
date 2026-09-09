@@ -1,14 +1,12 @@
 screen:
   name: "CockpitPlayer"
-  backgroundColor: "secondBG"
+  backgroundColor: "backgroundMedium"
   position: "150,900"
   size: "1620,150"
   title: "CockpitPlayer"
   children:
-    - xmlinc:
-        file: "screenpart_fonts.ymlinc"
     - widget:
-        backgroundColor: "secondBG"
+        backgroundColor: "backgroundMedium"
         borderColor: "black"
         borderWidth: "2"
         font: "$FR_big"
@@ -25,7 +23,7 @@ screen:
               type: "COCEventName"
               text: "Name"
     - eLabel:
-        backgroundColor: "sliderBG"
+        backgroundColor: "backgroundLight"
         position: "42,87"
         size: "1536,12"
         zPosition: "1"
@@ -69,7 +67,7 @@ screen:
               type: "COCRecordPosition"
               text: "Position"
     - widget:
-        backgroundColor: "secondBG"
+        backgroundColor: "backgroundMedium"
         borderColor: "black"
         borderWidth: "2"
         font: "$FR_medium"
@@ -86,7 +84,7 @@ screen:
               type: "COCServicePosition"
               text: "Position,Negate"
     - widget:
-        backgroundColor: "secondBG"
+        backgroundColor: "backgroundMedium"
         borderColor: "black"
         borderWidth: "2"
         font: "$FR_medium"
@@ -114,7 +112,7 @@ screen:
           - convert:
               type: "ConditionalShowHide"
     - widget:
-        backgroundColor: "secondBG"
+        backgroundColor: "backgroundMedium"
         borderWidth: "2"
         font: "$FR_medium"
         foregroundColor: "white"
