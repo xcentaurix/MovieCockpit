@@ -10,7 +10,7 @@ screen:
         size: "$screen_width,$screen_height"
         zPosition: "-10"
     - widget:
-        font: "FdLcD;36"
+        font: "FdLcD;45"
         halign: "center"
         position: "0,0"
         render: "Label"

@@ -275,9 +275,6 @@ class MovieList(List, Sorting, ServiceCenter):
         index = self.file_list_index.get(path, -1)
         return index
 
-    def getCurrentIndex(self):
-        return self.getIndex()
-
     def getCurrentSelection(self):
         index = self.getIndex()
         if index is not None and 0 <= index < len(self.file_list):

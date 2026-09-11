@@ -20,9 +20,10 @@ class CockpitEvent():
 
     def getEventInfo(self):
         logger.info("...")
-        event_start_time = self.service_center.info(self.service).info.getEventStartTime()
-        recording_start_time = self.service_center.info(self.service).info.getRecordingStartTime()
-        event_length = self.service_center.info(self.service).info.getLength()
+        info = self.service_center.info(self.service).info
+        event_start_time = info.getEventStartTime()
+        recording_start_time = info.getRecordingStartTime()
+        event_length = info.getLength()
         if recording_start_time and event_start_time > recording_start_time:
             event_length += event_start_time - recording_start_time
         before = 0

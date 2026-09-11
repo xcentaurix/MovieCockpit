@@ -331,7 +331,7 @@ class MovieCockpit(Screen, HelpableScreen, CockpitContextMenu, Actions, CutList)
         logger.info("...")
         selection_list = self.movie_list.getSelectionList()
         if len(selection_list) == 1 and self.movie_list.file_list:
-            index = self.movie_list.getCurrentIndex()
+            index = self.movie_list.getIndex()
             if not isRecording(selection_list[0]):
                 if index < len(self.movie_list.file_list) - 1:
                     index += 1

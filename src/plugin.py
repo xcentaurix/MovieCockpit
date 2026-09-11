@@ -64,7 +64,7 @@ def Plugins(**__):
         PluginDescriptor(
             name="MovieCockpit",
             description=_("Manage recordings"),
-            icon="MovieCockpit.png",
+            icon="plugin.png",
             where=[
                 PluginDescriptor.WHERE_PLUGINMENU,
             ],
